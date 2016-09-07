@@ -90,15 +90,15 @@ hsa-miR-132-3p</code></pre>
 
 The script options are listed below:
 <ul>
-    <li>"-miRNA": the input miRNA list</li>
-    <li>"-miRanda": miRanda predictions. Default: "humanfullpredictions.txt"</li>
-    <li>"-miScore": miRanda score thresold. Default: "humanfullpredictions.txt"</li>
-    <li>"-miFree": miRanda free energy threshold. Default: -20.0</li>
-    <li>"-synonyms": gene synonyms. Default: "gene_info"</li>
-    <li>"-output": output filename. Default: "output.txt"</li>
-    <li>"-ontology": GO ontology data. Default: "hsa-ensembl-go.txt"</li>
-    <li>"-processors": integer value for processors to be used in parallel. Default system cores-1.</li>
-    <li>"-species": specify "human" or "mouse". Default "human"</li>
+    <li>"-miRNA [filename]": the input miRNA list</li>
+    <li>"-miRanda [filename]": miRanda predictions. Default filename: "humanfullpredictions.txt"</li>
+    <li>"-miScore [score]": miRanda score thresold. Default score: "155"</li>
+    <li>"-miFree [energy]": miRanda free energy threshold. Default energy: -20.0</li>
+    <li>"-synonyms [filename]": gene synonyms. Default filename: "gene_info"</li>
+    <li>"-output [filename]": output filename. Default filename: "output.txt"</li>
+    <li>"-ontology [filename]": GO ontology data. Default filename: "hsa-ensembl-go.txt"</li>
+    <li>"-processors": integer value for processors to be used in parallel. Default value: system cores-1.</li>
+    <li>"-species [species_name]": specify "human" or "mouse". Default species: "human"</li>
     <li>"--altOntology": use the alternate file format for gene annotation data</li>
     <li>"--altInteractions": use the alternate file format for interaction data</li>
 </ul>
