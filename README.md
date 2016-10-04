@@ -52,8 +52,8 @@ hsa-miR-132-3p</code></pre>
 
     <li>Output from miRanda target prediction run. This requires:
         <ul>
-            <li>FASTA sequences for known mature miRNA from <?=Html::a('http://www.mirbase.org/ftp.shtml','http://www.mirbase.org/ftp.shtml',array('target'=>'_blank'))?> filtered for species of interest</li>
-            <li>FASTA sequences for 3' UTR of genes from <?=Html::a('http://www.biomart.org/','http://www.biomart.org/',array('target'=>'_blank'))?>
+            <li>FASTA sequences for known mature miRNA from <a href='http://www.mirbase.org/ftp.shtml' target='_blank'>http://www.mirbase.org/ftp.shtml</a> filtered for species of interest</li>
+            <li>FASTA sequences for 3' UTR of genes from <a href='http://www.biomart.org/' target='_blank'>http://www.biomart.org/</a>
                 Select the the following order:
                 <ul>
                     <li>Sequence Retrieval</li>
@@ -66,7 +66,7 @@ hsa-miR-132-3p</code></pre>
 
                 After the file has been downloaded, remove entries with "Sequence Unavailable".
             </li>
-            <li>miRanda software from <?=Html::a('http://www.microrna.org/microrna/getDownloads.do','http://www.microrna.org/microrna/getDownloads.do',array('target'=>'_blank'))?></li>
+            <li>miRanda software from <a href='http://www.microrna.org/microrna/getDownloads.do' target="_blank">http://www.microrna.org/microrna/getDownloads.do</a></li>
 
                 To generate correct format for script input, please run as: 
 
@@ -77,7 +77,7 @@ hsa-miR-132-3p</code></pre>
         <pre><code>miRNA|Gene_Name</code></pre>
         In this case you will need to use the "--altInteractions" option in order for the script to execute correctly.
     </li>
-    <li>Gene synonym data from NCBI, <?=Html::a('ftp://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz','ftp://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz',array('target'=>'_blank'))?></li>
+    <li>Gene synonym data from NCBI, <a href='ftp://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz' target="blank">ftp://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz</a></li>
 </ol>
 
 </p>
