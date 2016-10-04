@@ -22,7 +22,7 @@ Additionally, due to the heavy computational load of the program, a multicore en
 <h2>Required Files:</h2>
 
 <p>This script requires reference to several public datasets, which must
-be downloaded by the user.
+be downloaded by the user. Files needed to run the script are described below:
 
 <ol>
     <li>Input miRNA list, which is a text file containing only the names
