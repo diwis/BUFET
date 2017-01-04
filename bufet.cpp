@@ -979,7 +979,7 @@ void calculateCounts()
 void benjaminiHochberg()
 {
 	int total_p=checkGO.size(), total_no_p=noCheckGO.size();
-	int k,i;
+	int k,i,maxi;
 	double star=0.05, doubleStar=0.01;
 	
 	for (k=0; k<total_p; k++)
@@ -1008,31 +1008,32 @@ void benjaminiHochberg()
 	for (int j=0; j<total_fdr; j++)
 	{
 		double starcheck;
-
-		i=total_fdr-j;
+		i=j+1;
 		starcheck=(i*star)/total_fdr;
-		if (fdrList[i-1]->pvalue <= starcheck)
+		if (fdrList[j]->pvalue <= starcheck)
 		{
-			for (int m=0; m<i; m++)
-			{
-				fdrList[m]->fdr="*";
-			}
+			maxi=j;
 		}
 	}
+	for (int j=0; j<=maxi; j++)
+	{
+		fdrList[j]->fdr="*";
+	}
 
+	
 	for (int j=0; j<total_fdr; j++)
 	{
 		double starcheck;
-
-		i=total_fdr-j;
+		i=j+1;
 		starcheck=(i*doubleStar)/total_fdr;
-		if (fdrList[i-1]->pvalue <= starcheck)
+		if (fdrList[j]->pvalue <= starcheck)
 		{
-			for (int m=0; m<i; m++)
-			{
-				fdrList[m]->fdr="**";
-			}
+			maxi=j;
 		}
+	}
+	for (int j=0; j<=maxi; j++)
+	{
+		fdrList[j]->fdr="**";
 	}
 
 	sort(fdrList.begin(), fdrList.end(), icomparison);
