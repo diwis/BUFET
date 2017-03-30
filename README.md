@@ -45,8 +45,7 @@ hsa-miR-132-3p</code></pre>
             <li>GO Term Definition</li>
             <li>GO domain</li>
         </ul>
-        Note that in this case you will need to use the "--ensGO" option in order for the script to execute correctly.
-            
+        Note that in this case you will need to use the "--ensGO" option in order for the script to execute correctly.  
     </li>
 
     <li>miRNA-gene interaction data in a file which has the following format for each line:
@@ -67,7 +66,7 @@ hsa-miR-132-3p</code></pre>
 
                 After the file has been downloaded, remove entries with "Sequence Unavailable".
             </li>
-            <li>miRanda software from <a href='http://www.microrna.org/microrna/getDownloads.do' target="_blank">http://www.microrna.org/microrna/getDownloads.do</a></li>
+            <li>miRanda software from <a href='http://www.microrna.org/microrna/getDownloads.do' target="_blank">http://www.microrna.org/microrna/getDownloads.do</a>
 
                 To generate correct format for script input, please run as: 
 
