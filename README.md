@@ -45,7 +45,7 @@ hsa-miR-132-3p</code></pre>
             <li>GO Term Definition</li>
             <li>GO domain</li>
         </ul>
-        Note that in this case you will need to use the "--ensGO" option in order for the script to execute correctly.  
+        <b>Note that in this case you will need to use the "--ensGO" option in order for the script to execute correctly!</b>  
     </li>
     <li>miRNA-gene interaction data in a file which has the following format for each line:
         <pre><code>miRNA_name|gene_name</code></pre>
@@ -69,7 +69,7 @@ hsa-miR-132-3p</code></pre>
                 <pre><code>miranda hsa-mature-miRNA.fa ensembl3utr.txt -quiet | grep '>>hsa' >  miRandaPredictions.txt </code></pre>
             </li>
         </ul>
-        In this case you will need to use the "--miRanda" option in order for the script to execute correctly.
+        <b>In this case you will need to use the "--miRanda" option in order for the script to execute correctly!</b>
     </li>
     <li>Gene synonym data from NCBI, <a href='ftp://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz' target="_blank">ftp://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz</a></li>
 </ol>
