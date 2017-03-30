@@ -47,7 +47,6 @@ hsa-miR-132-3p</code></pre>
         </ul>
         Note that in this case you will need to use the "--ensGO" option in order for the script to execute correctly.  
     </li>
-
     <li>miRNA-gene interaction data in a file which has the following format for each line:
         <pre><code>miRNA_name|gene_name</code></pre>
         *The user can also use the output from miRanda target prediction run. This requires:
@@ -63,20 +62,16 @@ hsa-miR-132-3p</code></pre>
                     <li>Ensembl Transcript ID</li>
                     <li>Associated Gene Name</li>
                 </ul>
-
                 After the file has been downloaded, remove entries with "Sequence Unavailable".
             </li>
-            <li>miRanda software from <a href='http://www.microrna.org/microrna/getDownloads.do' target="_blank">http://www.microrna.org/microrna/getDownloads.do</a>
-
+            <li>miRanda software from <a href='http://www.microrna.org/microrna/getDownloads.do' target="_blank">http://www.microrna.org/microrna/getDownloads.do</a>.
                 To generate correct format for script input, please run as: 
-
                 <pre><code>miranda hsa-mature-miRNA.fa ensembl3utr.txt -quiet | grep '>>hsa' >  miRandaPredictions.txt </code></pre>
             </li>
         </ul>
-        
         In this case you will need to use the "--miRanda" option in order for the script to execute correctly.
     </li>
-    <li>Gene synonym data from NCBI, <a href='ftp://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz' target="blank">ftp://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz</a></li>
+    <li>Gene synonym data from NCBI, <a href='ftp://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz' target="_blank">ftp://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz</a></li>
 </ol>
 
 </p>
