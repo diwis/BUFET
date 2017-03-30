@@ -1017,9 +1017,9 @@ void benjaminiHochberg()
 	}
 	if (maxi>total_fdr)
 	{
-		maxi=total_fdr-1;
+		maxi=total_fdr;
 	}
-	for (int j=0; j<=maxi; j++)
+	for (int j=0; j<maxi; j++)
 	{
 		fdrList[j]->fdr="*";
 	}
@@ -1037,9 +1037,9 @@ void benjaminiHochberg()
 	}
 	if (maxi>total_fdr)
 	{
-		maxi=total_fdr-1;
+		maxi=total_fdr;
 	}
-	for (int j=0; j<=maxi; j++)
+	for (int j=0; j<maxi; j++)
 	{
 		fdrList[j]->fdr="**";
 	}
