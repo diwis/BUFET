@@ -31,7 +31,7 @@ example:<br />
         <pre><code>hsa-miR-132-5p
 hsa-miR-132-3p</code></pre>
     </li>
-    <li>A list of pathway annotation data retrieved by GO, KEGG or PANTHER. The data must be in the following CSV format:
+    <li>A list of pathway annotation data retrieved by GO, KEGG, PANTHER, DisGeNet, etc. The data must be in the following CSV format:
     <pre><code>gene_name|pathway/category_id|pathway/category_name</code></pre>
     *Alternatively, a list of Ensembl formatted annotations of genes to GO terms can be supplied. From <a href="http://www.ensembl.org/biomart" target="_blank">http://www.ensembl.org/biomart</a> select Ensembl Genes XX
     and species of interest. 
