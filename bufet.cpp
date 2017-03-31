@@ -1010,7 +1010,7 @@ void benjaminiHochberg()
 		double starcheck;
 		i=j+1;
 		starcheck=(i*star)/total_fdr;
-		if (fdrList[j]->pvalue <= starcheck)
+		if (fdrList[j]->pvalue < starcheck)
 		{
 			maxi=j;
 		}
@@ -1030,7 +1030,7 @@ void benjaminiHochberg()
 		double starcheck;
 		i=j+1;
 		starcheck=(i*doubleStar)/total_fdr;
-		if (fdrList[j]->pvalue <= starcheck)
+		if (fdrList[j]->pvalue < starcheck)
 		{
 			maxi=j;
 		}
