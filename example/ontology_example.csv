@@ -1,0 +1,151 @@
+ABCG1|GO:0009720|detection of hormone stimulus
+ACOT4|GO:0043648|dicarboxylic acid metabolic process
+AKT1|GO:2001047|regulation of G1/S transition checkpoint
+AKT2|GO:2001275|positive regulation of glucose import in response to insulin stimulus
+AS3MT|GO:0018872|arsonoacetate metabolic process
+ASPM|GO:0051661|maintenance of centrosome location
+ATOH1|GO:2000982|positive regulation of inner ear receptor cell differentiation
+ATP1A1|GO:0031947|negative regulation of glucocorticoid biosynthetic process
+ATP1A1|GO:0045989|positive regulation of striated muscle contraction
+AXIN1|GO:0021881|Wnt receptor signaling pathway involved in forebrain neuron fate commitment
+BIRC5|GO:0031536|positive regulation of exit from mitosis
+BMP2|GO:2000726|negative regulation of cardiac muscle cell differentiation
+BMP4|GO:2001012|mesenchymal cell differentiation involved in renal system development
+BRF1|GO:0009304|tRNA transcription
+CCL23|GO:2001264|negative regulation of C-C chemokine binding
+CD209|GO:0019062|viral attachment to host cell
+CD209|GO:0046795|intracellular virion transport
+CDC6|GO:0051984|positive regulation of chromosome segregation
+CENPH|GO:0051383|kinetochore organization
+CLEC4M|GO:0019062|viral attachment to host cell
+CLEC4M|GO:0046795|intracellular virion transport
+CRBN|GO:0034766|negative regulation of ion transmembrane transport
+CTR9|GO:2001162|positive regulation of histone H3-K79 methylation
+CYP1A2|GO:0009403|toxin biosynthetic process
+CYP1A2|GO:0071615|oxidative deethylation
+DAND5|GO:0038101|sequestering of nodal from receptor via nodal binding
+DAND5|GO:1900108|negative regulation of nodal signaling pathway
+DAND5|GO:1900146|negative regulation of nodal signaling pathway involved in determination of left/right asymmetry
+DARS2|GO:0070145|mitochondrial asparaginyl-tRNA aminoacylation
+DEK|GO:2000779|regulation of double-strand break repair
+DNAAF1|GO:0003356|regulation of cilium beat frequency
+DNAAF1|GO:0036158|outer dynein arm assembly
+DNAAF1|GO:0036159|inner dynein arm assembly
+DNAAF1|GO:0044458|motile cilium assembly
+DNAAF3|GO:0044458|motile cilium assembly
+F2R|GO:2000778|positive regulation of interleukin-6 secretion
+F2RL1|GO:2000778|positive regulation of interleukin-6 secretion
+FGFR3|GO:0061144|alveolar secondary septum development
+FGFR4|GO:0061144|alveolar secondary septum development
+FOXA2|GO:2000971|negative regulation of detection of glucose
+FOXA2|GO:2000976|regulation of transcription from RNA polymerase II promoter involved in detection of glucose
+FOXD1|GO:0072076|nephrogenic mesenchyme development
+FOXD1|GO:0072213|metanephric capsule development
+FOXD1|GO:0072267|metanephric capsule specification
+FOXH1|GO:2000824|negative regulation of androgen receptor activity
+FOXM1|GO:2000781|positive regulation of double-strand break repair
+GCNT3|GO:0002426|immunoglobulin production in mucosal tissue
+GDF7|GO:2001051|positive regulation of tendon cell differentiation
+GDF9|GO:2000870|regulation of progesterone secretion
+GOT1|GO:0043648|dicarboxylic acid metabolic process
+GTF3C1|GO:0009304|tRNA transcription
+H2AFY2|GO:0007549|dosage compensation
+H2AFY|GO:0007549|dosage compensation
+HAND2|GO:2000763|positive regulation of transcription from RNA polymerase II promoter involved in norepinephrine biosynthetic process
+HAND2|GO:2000764|positive regulation of semaphorin-plexin signaling pathway involved in outflow tract morphogenesis
+HES1|GO:2000978|negative regulation of forebrain neuron differentiation
+HES1|GO:2000981|negative regulation of inner ear receptor cell differentiation
+HES5|GO:2000981|negative regulation of inner ear receptor cell differentiation
+HEYL|GO:2000824|negative regulation of androgen receptor activity
+HLA-B|GO:2001198|regulation of dendritic cell differentiation
+HLA-DRB1|GO:2001179|regulation of interleukin-10 secretion
+HLA-G|GO:2001199|negative regulation of dendritic cell differentiation
+HRG|GO:2001027|negative regulation of endothelial cell chemotaxis
+HYAL2|GO:2000778|positive regulation of interleukin-6 secretion
+INPP5K|GO:2001153|positive regulation of renal water transport
+ITM2C|GO:0012502|induction of programmed cell death
+KIAA0528|GO:2001275|positive regulation of glucose import in response to insulin stimulus
+KIAA1324|GO:2000786|positive regulation of autophagic vacuole assembly
+KRT2|GO:0032980|keratinocyte activation
+LAMB2|GO:0072249|metanephric glomerular visceral epithelial cell development
+LILRB1|GO:2001180|negative regulation of interleukin-10 secretion
+LILRB1|GO:2001183|negative regulation of interleukin-12 secretion
+LILRB1|GO:2001186|negative regulation of CD8-positive, alpha-beta T cell activation
+LILRB1|GO:2001189|negative regulation of T cell activation via T cell receptor contact with antigen bound to MHC molecule on antigen presenting cell
+LILRB1|GO:2001193|positive regulation of gamma-delta T cell activation involved in immune response
+LILRB1|GO:2001199|negative regulation of dendritic cell differentiation
+LILRB1|GO:2001202|negative regulation of transforming growth factor-beta secretion
+LILRB1|GO:2001205|negative regulation of osteoclast development
+LILRB2|GO:2001198|regulation of dendritic cell differentiation
+LPCAT1|GO:2001246|negative regulation of phosphatidylcholine biosynthetic process
+MATN1|GO:0003429|growth plate cartilage chondrocyte morphogenesis
+MBTPS1|GO:0042990|regulation of transcription factor import into nucleus
+MED25|GO:2001178|positive regulation of mediator complex assembly
+MEFV|GO:0071641|negative regulation of macrophage inflammatory protein 1 alpha production
+MGAT1|GO:0006049|UDP-N-acetylglucosamine catabolic process
+MYC|GO:2001220|negative regulation of G2 phase of mitotic cell cycle
+MYOCD|GO:2000724|positive regulation of cardiac vascular smooth muscle cell differentiation
+MYOCD|GO:2001015|negative regulation of skeletal muscle cell differentiation
+NEUROG1|GO:0031536|positive regulation of exit from mitosis
+NKX2-2|GO:0003327|type B pancreatic cell fate commitment
+NKX2-2|GO:0060580|ventral spinal cord interneuron fate determination
+NLRP3|GO:0032621|interleukin-18 production
+NLRP3|GO:0050701|interleukin-1 secretion
+NOP14|GO:0000472|endonucleolytic cleavage to generate mature 5'-end of SSU-rRNA from (SSU-rRNA, 5.8S rRNA, LSU-rRNA)
+NOP14|GO:0000480|endonucleolytic cleavage in 5'-ETS of tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)
+NOX1|GO:0006746|FADH2 metabolic process
+NOX1|GO:0051454|intracellular pH elevation
+NPHS2|GO:0072249|metanephric glomerular visceral epithelial cell development
+NR1H4|GO:2001250|positive regulation of ammonia assimilation cycle
+OXT|GO:0045472|response to ether
+PHPT1|GO:2000984|negative regulation of ATP citrate synthase activity
+PID1|GO:2001170|negative regulation of ATP biosynthetic process
+PID1|GO:2001171|positive regulation of ATP biosynthetic process
+PID1|GO:2001274|negative regulation of glucose import in response to insulin stimulus
+PLK3|GO:2000777|positive regulation of proteasomal ubiquitin-dependent protein catabolic process involved in cellular response to hypoxia
+PLXNB2|GO:2001222|regulation of neuron migration
+PNMT|GO:0042418|epinephrine biosynthetic process
+PRKACA|GO:2000810|regulation of tight junction assembly
+PRKCD|GO:2000753|positive regulation of glucosylceramide catabolic process
+PRKCD|GO:2000755|positive regulation of sphingomyelin catabolic process
+PRKCH|GO:2000810|regulation of tight junction assembly
+PRKCZ|GO:2001181|positive regulation of interleukin-10 secretion
+PRKD1|GO:2001044|regulation of integrin-mediated signaling pathway
+PRKX|GO:2000696|regulation of epithelial cell differentiation involved in kidney development
+RARA|GO:0060010|Sertoli cell fate commitment
+SETMAR|GO:2001034|positive regulation of double-strand break repair via nonhomologous end joining
+SETMAR|GO:2001251|negative regulation of chromosome organization
+SGOL2|GO:0051754|meiotic sister chromatid cohesion, centromeric
+SHANK3|GO:2000822|regulation of behavioral fear response
+SIGMAR1|GO:0006696|ergosterol biosynthetic process
+SMO|GO:2000826|regulation of heart morphogenesis
+SNAI1|GO:2000810|regulation of tight junction assembly
+SNAI2|GO:2000810|regulation of tight junction assembly
+SRGAP2|GO:2001223|negative regulation of neuron migration
+SSBP3|GO:0021501|prechordal plate formation
+SSBP3|GO:0021547|midbrain-hindbrain boundary initiation
+SUPV3L1|GO:2000827|mitochondrial RNA surveillance
+TBCCD1|GO:0051661|maintenance of centrosome location
+TCOF1|GO:0042790|transcription of nuclear large rRNA transcript from RNA polymerase I promoter
+TGFB1|GO:0031536|positive regulation of exit from mitosis
+TGFB1|GO:0048298|positive regulation of isotype switching to IgA isotypes
+TH|GO:0006585|dopamine biosynthetic process from tyrosine
+TH|GO:0042214|terpene metabolic process
+TH|GO:0042418|epinephrine biosynthetic process
+TH|GO:0045472|response to ether
+TNFSF13|GO:0002426|immunoglobulin production in mucosal tissue
+TNFSF13|GO:0048298|positive regulation of isotype switching to IgA isotypes
+TNIP1|GO:0085032|modulation by symbiont of host I-kappaB kinase/NF-kappaB cascade
+TWIST1|GO:2000778|positive regulation of interleukin-6 secretion
+TWIST1|GO:2000793|cell proliferation involved in heart valve development
+TWIST1|GO:2000802|positive regulation of endocardial cushion to mesenchymal transition involved in heart valve formation
+UBE2C|GO:0010994|free ubiquitin chain polymerization
+UBE2C|GO:0031536|positive regulation of exit from mitosis
+UBE2S|GO:0010994|free ubiquitin chain polymerization
+UROS|GO:0006780|uroporphyrinogen III biosynthetic process
+UTP20|GO:0000472|endonucleolytic cleavage to generate mature 5'-end of SSU-rRNA from (SSU-rRNA, 5.8S rRNA, LSU-rRNA)
+UTP20|GO:0000480|endonucleolytic cleavage in 5'-ETS of tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)
+WDR61|GO:2001162|positive regulation of histone H3-K79 methylation
+WNT8B|GO:0021881|Wnt receptor signaling pathway involved in forebrain neuron fate commitment
+WNT8B|GO:0022002|negative regulation of anterior neural cell fate commitment of the neural plate by Wnt receptor signaling pathway
+XDH|GO:2001213|negative regulation of vasculogenesis
