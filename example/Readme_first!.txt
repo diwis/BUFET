@@ -3,6 +3,8 @@
 3. Place all files in the same folder.
 4. Execute the following command to run the example:
 
-	python bufet.py -interactions interactions_example.csv -ontology ontology_example.csv -output output.txt -miRNA input_example.txt -synonyms gene_info
+	python bufet.py -interactions interactions_example.csv -ontology ontology_example.csv -output output.txt -miRNA input_exampleXX.txt -synonyms gene_info
+	
+	where XX is the number of miRNAs in the sample input file (5,10,25,50).
 
-5. output.txt contains the results
+5. The file "output.txt" contains the results of the analysis
