@@ -143,7 +143,7 @@ vector <pNode *> fdrList;
  */
 int gene_count=1, miRNA_count=1,group_size=0,GOcount=0,thread_count;
 float miEnergy, miScore;
-long int iterations;
+unsigned long int iterations;
 string species;
 
 /*
@@ -178,7 +178,7 @@ int main(int argc, char* argv[])
 	}
 	
 	thread_count=atoi(argv[6]);
-	thread t[thread_count];
+	thread *t= new thread[thread_count];
 	miEnergy=stof(argv[8]);
 	miScore=stof(argv[9]);
 	species=argv[10];
@@ -382,7 +382,6 @@ void getInteractions(string filename)
 		{
 			string miRNA, gene;
 			float score,energy;
-			unsigned int delimiter;
 			token_list tokens,gtokens;
 
 			line=trim(line);
@@ -465,7 +464,6 @@ void getInteractionsAlternative(string filename)
 		while (getline(inFile,line))
 		{
 			string miRNA, gene;
-			unsigned int delimiter;
 			token_list tokens,gtokens;
 
 			line=trim(line);
@@ -526,7 +524,7 @@ void getGOs(string filename)
 	if (inFile.is_open())
 	{
 		string category, gene, name,domain;
-		unsigned int index;
+		int index;
 
 		while (getline(inFile,line))
 		{
@@ -745,7 +743,7 @@ void getSynonyms(string filename)
 				synonyms_tmp->push_back(trim(synonym));
 			
 
-				for (int k=0; k<synonyms_tmp->size(); k++)
+				for (unsigned int k=0; k<synonyms_tmp->size(); k++)
 				{
 					if (synonyms.count((*synonyms_tmp)[k])==0)
 						synonyms[(*synonyms_tmp)[k]]=synonyms_tmp;
@@ -783,7 +781,7 @@ void fixInteractions()
 				}
 				if (alternatives!=nullptr)
 				{
-					for (int k=0; k<alternatives->size(); k++)
+					for (unsigned int k=0; k<alternatives->size(); k++)
 					{
 						if (genes.find((*alternatives)[k])!=genes.end())
 						{
@@ -834,7 +832,7 @@ void getRandom(int size,int t_num, int inc)
 	mt19937 gen(rd());
 	uniform_int_distribution<> randMirna(1,miRNA_count-1);
 
-	long int total_interactions=finalInteractions.size();
+	unsigned long int total_interactions=finalInteractions.size();
 
 	if ((size==1) && (total_interactions < iterations))
 	{
@@ -850,7 +848,7 @@ void getRandom(int size,int t_num, int inc)
 	}
 	else
 	{
-		for (int i=t_num; i<iterations; i+=inc)
+		for (unsigned long int i=t_num; i<iterations; i+=inc)
 		{
 		
 			/*
@@ -896,7 +894,7 @@ void findIntersections(int t_num,int inc)
 		go_map=goGenes[checkGO[git].category];
 		int total_k=go_map->size();
 
-		for (int i=0; i<iterations; i++)
+		for (unsigned long int i=0; i<iterations; i++)
 		{	
 			bitset<BSIZE> result;
 			int intersection=0;
@@ -965,8 +963,7 @@ void writeOutput(string filename)
  */
 void calculateCounts()
 {
-	long double sum=0;
-	for (int i=0; i< iterations; i++)
+	for (unsigned long int i=0; i< iterations; i++)
 	{
 		i_counts.push_back((float)(map_all[i])->count());
 	}
@@ -979,7 +976,7 @@ void calculateCounts()
 void benjaminiHochberg()
 {
 	int total_p=checkGO.size(), total_no_p=noCheckGO.size();
-	int k,i,maxi;
+	int k,i,maxi=0;
 	double star=0.05, doubleStar=0.01;
 	
 	for (k=0; k<total_p; k++)
@@ -1010,7 +1007,7 @@ void benjaminiHochberg()
 		double starcheck;
 		i=j+1;
 		starcheck=(i*star)/total_fdr;
-		if (fdrList[j]->pvalue < starcheck)
+		if (fdrList[j]->pvalue <= starcheck)
 		{
 			maxi=j;
 		}
@@ -1030,7 +1027,7 @@ void benjaminiHochberg()
 		double starcheck;
 		i=j+1;
 		starcheck=(i*doubleStar)/total_fdr;
-		if (fdrList[j]->pvalue < starcheck)
+		if (fdrList[j]->pvalue <= starcheck)
 		{
 			maxi=j;
 		}
@@ -1064,7 +1061,7 @@ string trim(string mystr)
 
 string trim_chars_left(string mystr,string chars)
 {
-	unsigned int start,stop;
+	unsigned int start;
 
 	start=mystr.find_first_not_of(chars);
 
