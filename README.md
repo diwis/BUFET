@@ -97,4 +97,7 @@ The script options are listed below:
     <li>"-miScore [score]": miRanda score thresold if the miRanda mode is specified. Default score: "155"</li>
     <li>"-miFree [energy]": miRanda free energy threshold if the miRanda mode is specified. Default energy: "-20.0"</li>
 </ul>
+
+<h2>Contact</h2>
+For any problems with the execution of this code please contact us at zagganas@imis.athena-innovation.gr
 </p>
