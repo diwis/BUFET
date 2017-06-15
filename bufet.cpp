@@ -143,6 +143,7 @@ vector <pNode *> fdrList;
  */
 int gene_count=1, miRNA_count=1,group_size=0,GOcount=0,thread_count;
 float miEnergy, miScore;
+bool randomStatus=false;
 unsigned long int iterations;
 string species;
 
@@ -154,7 +155,6 @@ void getInteractionsAlternative(string);
 void getGOs(string);
 void getGOsAlternative(string);
 void getRandom(int,int,int);
-void getRandom_backup(int,int,int);
 void writeOutput(string);
 void findIntersections(int,int);
 void fixInteractions();
@@ -163,8 +163,8 @@ void calculateCounts();
 string trim(string mystr);
 string trim_chars_left(string,string);
 void getSynonyms(string);
-void clearMemory();
 void benjaminiHochberg();
+bool prepareRandom(int);
 bool pcomparison(pNode * n1, pNode * n2);
 bool icomparison(pNode * n1, pNode * n2);
 
@@ -215,7 +215,8 @@ int main(int argc, char* argv[])
 	/*
      * Spawn multiple threads to calculate unions
      */
-	if (thread_count>1)
+    randomStatus=prepareRandom(group_size);
+	if ((thread_count>1) && (!randomStatus))
 	{
 		if ((group_size==1) && (iterations< finalInteractions.size()))
 		{
@@ -811,6 +812,36 @@ void fixInteractions()
 
 }
 
+/* 
+ * Check whether the input size is 1.
+ * If so the random groups become the 
+ * gene sets of the miRNAs in the dataset.
+ * 
+ * @param size: size of the random miRNA sets
+ */
+bool prepareRandom(int size)
+{
+	unsigned long int total_interactions=finalInteractions.size();
+
+	if ((size==1) && (total_interactions < iterations))
+	{
+		int j=0;
+		cout << "You have selected " << iterations << " iterations, but your query contains only 1 miRNA. " 
+									 << total_interactions << " iterations will be performed." << endl;
+		iterations=total_interactions;
+		for (final_interactions_type::iterator fit=finalInteractions.begin(); fit!=finalInteractions.end(); fit++, j++)
+		{
+			map_all[j]=fit->second;
+		}
+		return true;
+
+	}
+	else
+	{
+		return false;
+	}
+}
+
 /*
  * Get a number of random miRNA sets of size m and calculate their interactions 
  * using bitwise operations.
@@ -832,42 +863,26 @@ void getRandom(int size,int t_num, int inc)
 	mt19937 gen(rd());
 	uniform_int_distribution<> randMirna(1,miRNA_count-1);
 
-	unsigned long int total_interactions=finalInteractions.size();
-
-	if ((size==1) && (total_interactions < iterations))
+	
+	for (unsigned long int i=t_num; i<iterations; i+=inc)
 	{
-		int j=0;
-		cout << "You have selected " << iterations << " iterations, but your query contains only 1 miRNA. " 
-									 << total_interactions << " iterations will be performed." << endl;
-		iterations=total_interactions;
-		for (final_interactions_type::iterator fit=finalInteractions.begin(); fit!=finalInteractions.end(); fit++, j++)
-		{
-			map_all[j]=fit->second;
-		}
-
-	}
-	else
-	{
-		for (unsigned long int i=t_num; i<iterations; i+=inc)
-		{
 		
-			/*
-         	 * Get n random internal IDs where n=size
-         	 * 
-         	 * Bitwise OR for to calculate targeted genes
-         	 */
-        	bits gene_map=new bitset<BSIZE>;
+		/*
+       	 * Get n random internal IDs where n=size
+       	 * 
+       	 * Bitwise OR for to calculate targeted genes
+       	 */
+       	bits gene_map=new bitset<BSIZE>;
 		
-			for (int j=0; j<size; j++)
-			{
-				int id;
-				id=randMirna(gen);
-				(*gene_map) |=(*finalInteractions[id]);
-			}
-			map_all[i]=gene_map;
+		for (int j=0; j<size; j++)
+		{
+			int id;
+			id=randMirna(gen);
+			(*gene_map) |=(*finalInteractions[id]);
 		}
+		map_all[i]=gene_map;
 	}
-
+	
 }
 
 /*
