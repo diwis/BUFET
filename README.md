@@ -78,7 +78,7 @@ hsa-miR-132-3p</code></pre>
 
 <h2>Script Execution</h2>
 
-<p>Run the following command:
+<p>Navigate inside the folder containing the .py and .bin files and run the following command:
 
 <pre><code>python bufet.py [OPTIONS]</code></pre>
 
