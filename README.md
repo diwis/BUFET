@@ -7,8 +7,9 @@
 <h2>System Requirements</h2>
 <p>In order for the program to run, the system must comply with the following specifications:
 <ul>
-    <li>Python interpreter that can run from the command line</li>
-    <li>g++ 4.8 and above</li>
+	<li>Linux or other unix-like environments (OSX).</li>
+    	<li>Python interpreter (>= version 2.7) that can run from the command line</li>
+    	<li>g++ 4.8 and above</li>
 </ul>
 Additionally, due to the heavy computational load of the program, a multicore environment is recommended but not a prerequisite.</p>
 
@@ -96,7 +97,8 @@ The script options are listed below:
     <li>"--miRanda": use prediction data from miRanda run.</li>
     <li>"-miScore [score]": miRanda score thresold if the miRanda mode is specified. Default score: "155"</li>
     <li>"-miFree [energy]": miRanda free energy threshold if the miRanda mode is specified. Default energy: "-20.0"</li>
-</ul>
+</ul><br />
+
 <h2>Example Execution</h2>
 <ol>
     <li>Download the code and compile it according to the instructions</li>
