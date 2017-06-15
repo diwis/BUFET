@@ -97,7 +97,16 @@ The script options are listed below:
     <li>"-miScore [score]": miRanda score thresold if the miRanda mode is specified. Default score: "155"</li>
     <li>"-miFree [energy]": miRanda free energy threshold if the miRanda mode is specified. Default energy: "-20.0"</li>
 </ul>
-
+<h2>Example Execution</h2>
+<ol>
+    <li>Download the code and compile it according to the instructions</li>
+    <li>Download synonym data from NCBI.</li>
+    <li>Place all files in the same folder.</li>
+    <li>From inside the folder containing all files execute the following command to run the example:
+	    <pre><code>python bufet.py -interactions interactions_example.csv -ontology ontology_example.csv -output output.txt -miRNA input_exampleXX.txt -synonyms gene_info</code></pre>
+    where XX is the number of miRNAs in the sample input file (5,10,25,50).</li>
+    <li> The file "output.txt" contains the results of the analysis</li>
+</ol>
 <h2>Contact</h2>
 For any problems with the execution of this code please contact us at zagganas@imis.athena-innovation.gr
 </p>
