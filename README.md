@@ -75,6 +75,7 @@ hsa-miR-132-3p</code></pre>
     <li>Gene synonym data from NCBI, <a href='ftp://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz' target="_blank">ftp://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz</a></li>
 </ol>
 
+Note that all files listed above <b>must not contain any header lines</b>!
 </p>
 
 <h2>Script Execution</h2>
