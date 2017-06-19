@@ -121,7 +121,14 @@ The script options are listed below:
 <p>In order to reproduce one of the experiments detailed in the paper manuscript please follow the instructions below:
 <ol>
     <li>Download the code and compile it according to the instructions (See section "Compiling the code")</li>
-    <li>Download the special file form (that can be run by both BUFET and EmpiricalGO) for the interaction and annotation datasets, as detailed in the "Availability of Data and Material" section of the manuscript. Also download the input files from the link provided in the manuscript.</li>
+    <li>Download the special file form (that can be run by both BUFET and EmpiricalGO) for the interaction and annotation datasets, as detailed in the "Availability of Data and Material" section of the manuscript (links also provided below). Then, download the input files from the link provided in the manuscript (also provided below).
+    	<ul>
+	<li>Annotation data: <a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/annotation_special_dataset.csv.gz">http://carolina.imis.athena-innovation.gr/bufet/annotation_special_dataset.csv.gz</a></li>
+	<li>microT special form dataset: <a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/microT_special_dataset.csv.gz">http://carolina.imis.athena-innovation.gr/bufet/microT_special_dataset.csv.gz</a></li>
+	<li>miRanda special form dataset: <a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/miRanda_special_dataset.csv.gz">http://carolina.imis.athena-innovation.gr/bufet/miRanda_special_dataset.csv.gz</a></li>
+	<li>miRNA input files: <a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/experiment_input.tar.gz">http://carolina.imis.athena-innovation.gr/bufet/experiment_input.tar.gz</a></li>
+	</ul>
+    </li>
     <li>Uncompress the miRNA input files with
     <pre><code>tar xzf experiment_input.tar.gz</code></pre>
     <li>Uncompress the interactions file with:
