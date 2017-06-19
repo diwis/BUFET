@@ -112,7 +112,8 @@ The script options are listed below:
     <li>Download synonym data from NCBI. (For a link, see section "Required files")</li>
     <li>Place all files in the same folder as the .py and .bin files.</li>
     <li>From inside the folder containing all files execute the following command to run the example:
-	    <pre><code>python bufet.py -interactions interactions_example.csv -ontology ontology_example.csv -output output.txt -miRNA input_exampleXX.txt -synonyms All_Mammalia.gene_info</code></pre>
+	    <pre><code>python bufet.py -interactions interactions_example.csv -ontology ontology_example.csv -output output.txt 
+	    -miRNA input_exampleXX.txt -synonyms All_Mammalia.gene_info</code></pre>
     where XX is the number of miRNAs in the sample input file (5,10,25,50).</li>
     <li> The file "output.txt" contains the results of the analysis</li>
 </ol></p>
@@ -139,7 +140,8 @@ The script options are listed below:
     <li>Download synonym data from NCBI. (For a link, see section "Required files")</li>
     <li>Place all files in the same folder as the .py and .bin files. If not, modify file paths accordingly.</li>
     <li>From inside the folder containing all files execute the following command to run the experiment:
-	    <pre><code>python bufet.py -interactions XX_special_dataset.csv -ontology annotation_special_dataset.csv -output output.txt -miRNA input/expYY/miRNA-ZZ.txt -synonyms All_Mammalia.gene_info -processors PP --ensGO --miRanda</code></pre>
+	    <pre><code>python bufet.py -interactions XX_special_dataset.csv -ontology annotation_special_dataset.csv -output output.txt 
+	    -miRNA input/expYY/miRNA-ZZ.txt -synonyms All_Mammalia.gene_info -processors PP --ensGO --miRanda</code></pre>
     where:
     	<ul>
     		<li>X is either microT or miRanda</li>
