@@ -132,7 +132,7 @@ The script options are listed below:
     <li>Download synonym data from NCBI. (For a link, see section "Required files")</li>
     <li>Place all files in the same folder as the .py and .bin files. If not, modify file paths accordingly.</li>
     <li>From inside the folder containing all files execute the following command to run the experiment:
-	    <pre><code>python bufet.py -interactions XX_special_dataset.csv -ontology annotation_special_dataset.csv -output output.txt -miRNA input/expYY/miRNA-ZZ.txt -synonyms All_Mammalia.gene_info -processors PP</code></pre>
+	    <pre><code>python bufet.py -interactions XX_special_dataset.csv -ontology annotation_special_dataset.csv -output output.txt -miRNA input/expYY/miRNA-ZZ.txt -synonyms All_Mammalia.gene_info -processors PP --ensGO --miRanda</code></pre>
     where:
     	<ul>
     		<li>X is either microT or miRanda</li>
