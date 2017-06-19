@@ -128,7 +128,7 @@ The script options are listed below:
     <pre><code>gzip -d XX_special_dataset.csv.gz</code></pre>
     where XX can either be "microT" or "miRanda"</li>
     <li>Uncompress the annotations file with:
-    <pre><code>gzip -d annotations_special_dataset.csv.gz</code></pre></li>
+    <pre><code>gzip -d annotation_special_dataset.csv.gz</code></pre></li>
     <li>Download synonym data from NCBI. (For a link, see section "Required files")</li>
     <li>Place all files in the same folder as the .py and .bin files. If not, modify file paths accordingly.</li>
     <li>From inside the folder containing all files execute the following command to run the experiment:
