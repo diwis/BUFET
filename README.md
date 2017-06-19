@@ -2,28 +2,32 @@
 
 <h2>Introduction</h2>
 <p>BUFET is a free software designed to speed up the unbiased miRNA enrichment analysis algorithm as described by Bleazard et al. in <a href="http://bioinformatics.oxfordjournals.org/content/31/10/1592" target="_blank">in their paper</a></p>
-<p>The BUFET algorithm generates an empirical distribution of genes targeted by miRNA and calculates p-values for related biological processes. Benjamini-Hochberg FDR correction produces a '*' or '**' for significance at 0.05 FDR and 0.01 FDR</p>
+<p>The BUFET algorithm generates an empirical distribution of genes targeted by miRNA and calculates p-values for related biological processes. Benjamini-Hochberg FDR correction produces a '*' or '**' for significance at 0.05 FDR and 0.01 FDR respectively.</p>
 
 <h2>System Requirements</h2>
 <p>In order for the program to run, the system must comply with the following specifications:
 <ul>
-	<li>Linux or other unix-like environments (OSX).</li>
+	<li>Linux or other unix-like environments (Mac OS).</li>
     	<li>Python interpreter (>= version 2.7) that can run from the command line</li>
     	<li>g++ 4.8 and above</li>
 </ul>
 Additionally, due to the heavy computational load of the program, a multicore environment is recommended but not a prerequisite.</p>
 
+<h2>Compiling the code</h2>
+
 <p>In order to be able to run the BUFET script, you first need to compile the C++ program file. A Makefile is provided for that reason. The process is as follows:<br />
     <ol>
-        <li>Navigate inside the folder containing the .cpp, .py and Make files</li>
+        <li>From the command line, navigate inside the folder containing the .cpp, .py and Make files</li>
         <li>Run the following command:
             <pre><code>make</code></pre>
-    </ol><br />
+    </ol>
+This will compile the code and create a .bin file. <b>The .bin file must be in the same folder as the .py at all times for the program to run!</b>
+</p>
 
 <h2>Required Files:</h2>
 
-<p>This script requires reference to several public datasets, which must
-be downloaded by the user. Files needed to run the script are described below:
+<p>This script requires files from several public datasets, which must
+be downloaded by the user. Files required in order to run the script are described below:
 
 <ol>
     <li>Input miRNA list, which is a text file containing only the names
@@ -32,8 +36,9 @@ example:<br />
         <pre><code>hsa-miR-132-5p
 hsa-miR-132-3p</code></pre>
     </li>
+    <li>Gene synonym data from NCBI, <a href='ftp://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz' target="_blank">ftp://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz</a>. Decompress the file with: <pre><code>gzip -d All_Mammalia.gene_info.gz</code></pre></li>
     <li>A list of pathway annotation data retrieved by GO, KEGG, PANTHER, DisGeNet, etc. The data must be in the following CSV format:
-    <pre><code>gene_name|pathway/category_id|pathway/category_name</code></pre>
+    <pre><code>gene_name|pathway_id|pathway_name</code></pre>
     *Alternatively, a list of Ensembl formatted annotations of genes to GO terms can be supplied. From <a href="http://www.ensembl.org/biomart" target="_blank">http://www.ensembl.org/biomart</a> select Ensembl Genes XX
     and species of interest. 
         In attributes select in the following order:
@@ -46,7 +51,7 @@ hsa-miR-132-3p</code></pre>
             <li>GO Term Definition</li>
             <li>GO domain</li>
         </ul>
-        <b>Note that in this case you will need to use the "--ensGO" option in order for the script to execute correctly!</b>  
+	Note that in this case you will need to use the <b>"--ensGO"</b> option in order for the script to execute correctly! 
     </li>
     <li>miRNA-gene interaction data in a file which has the following format for each line:
         <pre><code>miRNA_name|gene_name</code></pre>
@@ -70,12 +75,10 @@ hsa-miR-132-3p</code></pre>
                 <pre><code>miranda hsa-mature-miRNA.fa ensembl3utr.txt -quiet | grep '>>hsa' >  miRandaPredictions.txt </code></pre>
             </li>
         </ul>
-        <b>In this case you will need to use the "--miRanda" option in order for the script to execute correctly!</b>
+	In this case you will need to use the <b>"--miRanda"</b> option in order for the script to execute correctly!
     </li>
-    <li>Gene synonym data from NCBI, <a href='ftp://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz' target="_blank">ftp://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz</a></li>
-</ol>
-
-Note that all files listed above <b>must not contain any header lines</b>!
+   </ol>
+Note that all files listed above can contain header lines starting with the <b>"#"</b> character.
 </p>
 
 <h2>Script Execution</h2>
@@ -87,26 +90,27 @@ Note that all files listed above <b>must not contain any header lines</b>!
 The script options are listed below:
 <ul>
     <li>"-miRNA [filename]": the input miRNA list</li>
-    <li>"-interactions [filename]": miRNA-gene interactions. Default filename: "interactions.csv"</li>
-    <li>"-synonyms [filename]": gene synonyms. Default filename: "gene_info"</li>
-    <li>"-output [filename]": output filename. Default filename: "output.txt"</li>
-    <li>"-ontology [filename]": ontology data. Default filename: "ontology.csv"</li>
+    <li>"-interactions [filename]": path to miRNA-gene interactions file.</li>
+    <li>"-synonyms [filename]": path to gene synonyms file.</li>
+    <li>"-output [filename]": path to output filename. Default filename: "output.txt"</li>
+    <li>"-ontology [filename]": path to ontology data.</li>
     <li>"-iterations [value]": number of random miRNA groups to test against. Default value: "10000"</li>
     <li>"-processors": integer value for processors to be used in parallel. Default value: system cores-1.</li>
-    <li>"-species [species_name]": specify "human" or "mouse". Default species: "human"</li>
+    <li>"-species [species_name]": specify either "human" or "mouse". Default species: "human"</li>
     <li>"--ensGO": use GO ontology data supplied by Ensembl</li>
     <li>"--miRanda": use prediction data from miRanda run.</li>
     <li>"-miScore [score]": miRanda score thresold if the miRanda mode is specified. Default score: "155"</li>
     <li>"-miFree [energy]": miRanda free energy threshold if the miRanda mode is specified. Default energy: "-20.0"</li>
+    <li>'-h" or "--help": print help message and exit</li>
 </ul><br />
 
 <h2>Example Execution</h2>
 <ol>
-    <li>Download the code and compile it according to the instructions</li>
-    <li>Download synonym data from NCBI.</li>
-    <li>Place all files in the same folder.</li>
+    <li>Download the code and compile it according to the instructions (See section "Compiling the code")</li>
+    <li>Download synonym data from NCBI. (For a link, see section "Required files", no 4)</li>
+    <li>Place all files in the same folder as the .py and .bin files.</li>
     <li>From inside the folder containing all files execute the following command to run the example:
-	    <pre><code>python bufet.py -interactions interactions_example.csv -ontology ontology_example.csv -output output.txt -miRNA input_exampleXX.txt -synonyms gene_info</code></pre>
+	    <pre><code>python bufet.py -interactions interactions_example.csv -ontology ontology_example.csv -output output.txt -miRNA input_exampleXX.txt -synonyms All_Mammalia.gene_info</code></pre>
     where XX is the number of miRNAs in the sample input file (5,10,25,50).</li>
     <li> The file "output.txt" contains the results of the analysis</li>
 </ol>
