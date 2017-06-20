@@ -62,7 +62,7 @@ def isFloatPositiveNumber(s):
     except ValueError:
         return False
 
-def checkFiles(mirna_file,interactions_file,ontology_file,synonyms_file):
+def checkmiRNAFile(mirna_file):
 	##
 	#Check that the input file exists
 	##
@@ -74,7 +74,7 @@ def checkFiles(mirna_file,interactions_file,ontology_file,synonyms_file):
 		print('\nError: Input file "' + mirna_file + '" does not exist.\n')
 		exit(1)
 
-	
+def checkInteractionsFile(interactions_file):	
 	##
 	# Check interactions file
 	##
@@ -97,29 +97,34 @@ def checkFiles(mirna_file,interactions_file,ontology_file,synonyms_file):
 			if len(linetmp)>1:
 				print('\nError: A wrong delimiter ("\\t") is used in the interactions file in line ' + str(i) +'. Perhaps you are using a wrong file type?')
 				exit(2)
+
 			line=line.split('|')
 			if len(line)<2:
-				print('\nError: There was a problem with the interactions file in line ' + str(i) +'. Please check the file and try again.')
+				print('\nError: There was a problem with the interactions file in line ' + str(i) +'. Please check that the file is using the correct format and try again.')
 				exit(2)
 			if line[0]=='' or line[0].isspace():
-				print('\nError: The miRNA is missing in the interactions file in line ' + str(i) +'. Please check the file and try again.')
+				print('\nError: The miRNA is missing in the interactions file in line ' + str(i) +'. Please check that the file is using the correct format and try again.')
 				exit(2)
 			if line[1]=='' or line[1].isspace():
-				print('\nError: The gene is missing in the interactions file in line ' + str(i) +'. Please check the file and try again.')
+				print('\nError: The gene is missing in the interactions file in line ' + str(i) +'. Please check that the file is using the correct format and try again.')
 				exit(2)
 			i+=1
 	else:
 		for line in f:
 			if line[0]=='#':
 				continue
+			if line[0:2]!='>>':
+				print('\nError: There was a problem with the miRanda interactions file in line ' + str(i) +'. Please check that the file is the output of miRanda and try again.')
+				exit(2)
 			line=line.split('\t')
 			if len(line)<10:
-				print('\nError: There was a problem with the miRanda interactions file in line ' + str(i) +'. Please check the file and try again.')
+				print('\nError: There was a problem with the miRanda interactions file in line ' + str(i) +'. Please check that the file is the output of miRanda and try again.')
 				exit(2)
 			i+=1
 	f.close()
 	print("OK!")
 
+def checkOntologyFile(ontology_file):
 	##
 	#Check ontology file
 	##
@@ -145,13 +150,13 @@ def checkFiles(mirna_file,interactions_file,ontology_file,synonyms_file):
 				exit(2)
 			line=line.strip().split('|')
 			if len(line)<3 :
-				print('\nError: There was a problem with the ontology file in line ' + str(i) +'. Please check the file and try again.')
+				print('\nError: There was a problem with the ontology file in line ' + str(i) +'. Please check that the file is using the correct format and try again.')
 				exit(3)
 			if line[0]=='' or line[0].isspace():
-				print('\nError: The gene is missing in the ontology file in line ' + str(i) +'. Please check the file and try again.')
+				print('\nError: The gene is missing in the ontology file in line ' + str(i) +'. Please check that the file is using the correct format and try again.')
 				exit(3)
 			if line[1]=='' or line[1].isspace():
-				print('\nError: The term is missing in the ontology file in line ' + str(i) +'. Please check the file and try again.')
+				print('\nError: The term is missing in the ontology file in line ' + str(i) +'. Please check that the file is using the correct format and try again.')
 				exit(3)
 			if line[2]=='' or line[2].isspace():
 				nameMissing=True
@@ -174,7 +179,7 @@ def checkFiles(mirna_file,interactions_file,ontology_file,synonyms_file):
 	else:
 		print("OK!")
 	
-
+def checkSynonymsFile(synonyms_file):
 	##
 	# Check synonyms file
 	##
@@ -214,7 +219,10 @@ def printOptions():
 	print('-miFree: miRanda free energy (valid only if the --miRanda flag is invoked)')
 	print('-miScore: miRanda free energy (valid only if the --miRanda flag is invoked)')
 	print('--ensGO: use ontology file downloaded from Ensembl')
-	print('--disable-file-check: (quicker but not recommended) disable existence and file format validation.')
+	print('--disable-file-check: (quicker but not recommended) disable all file validations.')
+	print('--disable-interactions-check: (quicker but not recommended) disable existence and file format validation for the interactions file.')
+	print('--disable-ontology-check: (quicker but not recommended) disable existence and file format validation for the ontology file.')
+	print('--disable-synonyms-check: (quicker but not recommended) disable existence and file format validation for the synonyms file.')
 	print('--help: print this message')
 
 commandLine=sys.argv
@@ -235,6 +243,9 @@ options['-miScore'] = '155.0'
 options['-miFree'] = '-20.0'
 options['-disable-file-check']='no'
 options['-help']='no'
+options['-disable-interactions-check']='no'
+options['-disable-synonyms-check']='no'
+options['-disable-ontology-check']='no'
 
 #Read command line arguments
 i=1
@@ -279,6 +290,14 @@ if options['-ensGO']=='no':
 else:
 	altOnt='0'
 
+#Find script path, which must be the same as the executable
+script_path=os.path.dirname(os.path.realpath(__file__))
+executable=script_path+'/bufet.bin'
+
+if not os.path.exists(executable):
+	print('\nError: Executable file "bufet.bin" not in folder "' + os.path.abspath('.') + '".\nPlease run "make" to compile the C++ core or move the binary inside the folder.\n')
+	exit(5)
+
 #Check that parameters are valid
 if options['-miRNA']=='':
 	print('\nError: No input miRNA file specified!')
@@ -316,20 +335,23 @@ if altInt=='0':
 
 
 
-#Find script path, which must be the same as the executable
-script_path=os.path.dirname(os.path.realpath(__file__))
-executable=script_path+'/bufet.bin'
-
-if not os.path.exists(executable):
-	print('\nError: Executable file "bufet.bin" not in folder "' + os.path.abspath('.') + '".\nPlease run "make" to compile the C++ core.\n')
-	exit(5)
-
-
 #Check files if not disabled
 if options['-disable-file-check']=='no':
-	checkFiles(os.path.abspath(options['-miRNA']),os.path.abspath(options['-interactions']),os.path.abspath(options['-ontology']),os.path.abspath(options['-synonyms']))
+	checkmiRNAFile(os.path.abspath(options['-miRNA']))
+	if options['-disable-interactions-check']=='no':
+		checkInteractionsFile(os.path.abspath(options['-interactions']))
+	else:
+		print('Warning: Interactions file validation has been disabled.')
+	if options['-disable-ontology-check']=='no':
+		checkOntologyFile(os.path.abspath(options['-ontology']))
+	else:
+		print('Warning: Ontology file validation has been disabled.')
+	if options['-disable-synonyms-check']=='no':
+		checkSynonymsFile(os.path.abspath(options['-synonyms']))
+	else:
+		print('Warning: Synonyms file validation has been disabled.')
 else:
-	print('File check is disabled!')
+	print('Warning: File validation is disabled.')
 #run script
 print('Starting BUFET')
 return_code=subprocess.call([executable,options['-interactions'],options['-output'],options['-miRNA'],options['-ontology'], options['-iterations'], options['-processors'],options['-synonyms'],options['-miFree'],options['-miScore'],available_species[options['-species']],altInt,altOnt])
