@@ -1,4 +1,15 @@
 # Boosting the Unbiased Functional Enrichment Analysis (BUFET)
+<h2>Table of contents</h2>
+<p>
+<ol>
+<li>Introduction</li>
+<li>System Requirements</li>
+<li>Compiling the code</li>
+<li>Required Files</li>
+<li>Script Execution</li>
+<li>Example Execution</li>
+<li>Reproduction of an experiment in the manuscript for comparison with EmpiricalGO</li>
+</ol></p>
 
 <h2>Introduction</h2>
 <p>BUFET is a free software designed to speed up the unbiased miRNA enrichment analysis algorithm as described by Bleazard et al. in <a href="http://bioinformatics.oxfordjournals.org/content/31/10/1592" target="_blank">in their paper</a></p>
@@ -24,7 +35,7 @@ Additionally, due to the heavy computational load of the program, a multicore en
 This will compile the code and create a .bin file. <b>The .bin file must be in the same folder as the .py at all times for the program to run</b>
 </p>
 
-<h2>Required Files:</h2>
+<h2>Required Files</h2>
 
 <p>This script requires files from several public datasets, which must
 be downloaded by the user. Files required in order to run the script are described below:
