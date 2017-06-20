@@ -3,12 +3,12 @@
 <p>
 <ol>
 <li><a href="#introduction">Introduction</a></li>
-<li><a href="https://github.com/diwis/BUFET#system-requirements">System Requirements</a></li>
-<li><a href="https://github.com/diwis/BUFET#compiling-the-code">Compiling the code</a></li>
-<li><a href="https://github.com/diwis/BUFET#required-files">Required Files</a></li>
-<li><a href="https://github.com/diwis/BUFET#script-execution">Script Execution</a></li>
-<li><a href="https://github.com/diwis/BUFET#example-execution">Example Execution</a></li>
-<li><a href="https://github.com/diwis/BUFET#reproduction-of-an-experiment-in-the-manuscript-for-comparison-with-empiricalgo">Reproduction of an experiment in the manuscript for comparison with EmpiricalGO</a></li>
+<li><a href="#system-requirements">System Requirements</a></li>
+<li><a href="#compiling-the-code">Compiling the code</a></li>
+<li><a href="#required-files">Required Files</a></li>
+<li><a href="#script-execution">Script Execution</a></li>
+<li><a href="#example-execution">Example Execution</a></li>
+<li><a href="#reproduction-of-an-experiment-in-the-manuscript-for-comparison-with-empiricalgo">Reproduction of an experiment in the manuscript for comparison with EmpiricalGO</a></li>
 </ol></p>
 
 <h2>Introduction</h2>
