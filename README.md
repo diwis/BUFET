@@ -2,7 +2,7 @@
 <h2>Table of contents</h2>
 <p>
 <ol>
-<li><a href="https://github.com/diwis/BUFET#introduction">Introduction</a></li>
+<li><a href="#introduction">Introduction</a></li>
 <li><a href="https://github.com/diwis/BUFET#system-requirements">System Requirements</a></li>
 <li><a href="https://github.com/diwis/BUFET#compiling-the-code">Compiling the code</a></li>
 <li><a href="https://github.com/diwis/BUFET#required-files">Required Files</a></li>
