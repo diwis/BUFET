@@ -2,13 +2,13 @@
 <h2>Table of contents</h2>
 <p>
 <ol>
-<li>Introduction</li>
-<li>System Requirements</li>
-<li>Compiling the code</li>
-<li>Required Files</li>
-<li>Script Execution</li>
-<li>Example Execution</li>
-<li>Reproduction of an experiment in the manuscript for comparison with EmpiricalGO</li>
+<li><a href="https://github.com/diwis/BUFET#introduction">Introduction</a></li>
+<li><a href="https://github.com/diwis/BUFET#system-requirements">System Requirements</a></li>
+<li><a href="https://github.com/diwis/BUFET#compiling-the-code">Compiling the code</a></li>
+<li><a href="https://github.com/diwis/BUFET#required-files">Required Files</a></li>
+<li><a href="https://github.com/diwis/BUFET#script-execution">Script Execution</a></li>
+<li><a href="https://github.com/diwis/BUFET#example-execution">Example Execution</a></li>
+<li><a href="https://github.com/diwis/BUFET#reproduction-of-an-experiment-in-the-manuscript-for-comparison-with-empiricalgo">Reproduction of an experiment in the manuscript for comparison with EmpiricalGO</a></li>
 </ol></p>
 
 <h2>Introduction</h2>
