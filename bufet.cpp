@@ -145,7 +145,6 @@ int gene_count=1, miRNA_count=1,group_size=0,GOcount=0,thread_count;
 float miEnergy, miScore;
 bool randomStatus=false;
 unsigned long int iterations;
-string species;
 
 /*
  * Function definitions(see explanations above each function)
@@ -162,7 +161,7 @@ void getMirnas(string);
 void calculateCounts();
 string trim(string mystr);
 string trim_chars_left(string,string);
-void getSynonyms(string);
+void getSynonyms(string,string);
 void benjaminiHochberg();
 bool prepareRandom(int);
 bool pcomparison(pNode * n1, pNode * n2);
@@ -181,9 +180,8 @@ int main(int argc, char* argv[])
 	thread *t= new thread[thread_count];
 	miEnergy=stof(argv[8]);
 	miScore=stof(argv[9]);
-	species=argv[10];
 	iterations=atoi(argv[5]);
-    iterations-=iterations % thread_count;
+    //iterations-=iterations % thread_count;
 	map_all=new bits[iterations];
 	cout << "Reading GO category data" << endl;
 	if (stoi(argv[12])==1)
@@ -195,7 +193,7 @@ int main(int argc, char* argv[])
 		getGOs(argv[4]);
 	}
 	cout << "Reading synonym data" << endl;
-	getSynonyms(argv[7]);
+	getSynonyms(argv[7],argv[10]);
 	cout << "Reading interaction data" << endl;
 	if (stoi(argv[11])==1)
 	{
@@ -386,6 +384,8 @@ void getInteractions(string filename)
 			token_list tokens,gtokens;
 
 			line=trim(line);
+			if (line[0]=='#')
+				continue;
 			line=trim_chars_left(line,">");
 			
 			index=line.find_first_of("\t");
@@ -468,6 +468,8 @@ void getInteractionsAlternative(string filename)
 			token_list tokens,gtokens;
 
 			line=trim(line);
+			if (line[0]=='#')
+				continue;
 			
 			index=line.find_first_of("|");
 			miRNA=line.substr(0,index);
@@ -532,6 +534,8 @@ void getGOs(string filename)
 			index=0;
 			
 			line=trim(line);
+			if (line[0]=='#')
+				continue;
 			
 			index=line.find_first_of("\t");
 			line=line.substr(index+1);
@@ -634,6 +638,8 @@ void getGOsAlternative(string filename)
 			index=0;
 			
 			line=trim(line);
+			if (line[0]=='#')
+				continue;
 			
 			index=line.find_first_of("|");
 			gene=line.substr(0,index);
@@ -692,22 +698,21 @@ void getGOsAlternative(string filename)
  * 
  * @param filename : filename provided by the user
  */
-void getSynonyms(string filename)
+void getSynonyms(string filename,string taxid)
 {
 	ifstream inFile;
-	string line,gene, taxid, taxonomy, synline,synonym;
+	string line,gene, taxonomy, synline,synonym;
 	int index=0;
-
-	taxid=(species=="human") ? "9606" : "10090";
 
 	inFile.open(filename);
 	if (inFile.is_open())
 	{
-		getline(inFile,line);
 
 		while(getline(inFile,line))
 		{
 			line=trim(line);
+			if (line[0]=='#')
+				continue;
 			index=line.find_first_of("\t");
 			taxonomy=line.substr(0,index);
 			if (taxonomy!=taxid)
@@ -826,8 +831,8 @@ bool prepareRandom(int size)
 	if ((size==1) && (total_interactions < iterations))
 	{
 		int j=0;
-		cout << "You have selected " << iterations << " iterations, but your query contains only 1 miRNA. " 
-									 << total_interactions << " iterations will be performed." << endl;
+		cout << "You have selected " << iterations << " iterations, but your query contains only 1 miRNA. As a result, only " 
+									 << total_interactions << " iterations can be performed." << endl;
 		iterations=total_interactions;
 		for (final_interactions_type::iterator fit=finalInteractions.begin(); fit!=finalInteractions.end(); fit++, j++)
 		{
