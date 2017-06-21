@@ -28,6 +28,7 @@ Additionally, due to the heavy computational load of the program, a multicore en
 
 <p>In order to be able to run the BUFET script, you first need to compile the C++ program file. A Makefile is provided for that reason. The process is as follows:<br />
     <ol>
+    <li>Download the code and unzip the files</li>
         <li>From the command line, navigate inside the folder containing the .cpp, .py and Make files</li>
         <li>Run the following command:
             <pre><code>make</code></pre>
