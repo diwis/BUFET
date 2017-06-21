@@ -6,7 +6,7 @@
 <li><a href="#system-requirements">System Requirements</a></li>
 <li><a href="#compiling-the-code">Compiling the code</a></li>
 <li><a href="#reproduction-of-an-experiment-in-the-manuscript-for-comparison-with-empiricalgo">Reproduction of an experiment in the manuscript for comparison with EmpiricalGO</a></li>
-<li><a href="#required-files-for-analyses">Required Files for analyses</a></li>
+<li><a href="#files-required-for-analyses">Files Required for analyses</a></li>
 <li><a href="#script-execution">Script Execution</a></li>
 <li><a href="#example-execution">Example Execution</a></li>
 
@@ -51,18 +51,18 @@ This will compile the code and create a .bin file. <b>The .bin file must be in t
 	<li>miRNA input files: <a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/experiment_input.tar.gz">http://carolina.imis.athena-innovation.gr/bufet/experiment_input.tar.gz</a></li>
 	</ul>
     </li>
-    <li>Uncompress the miRNA input files with
-    <pre><code>tar xzf experiment_input.tar.gz</code></pre>
-    <li>Uncompress the interactions file with:
-    <pre><code>gzip -d XX_special_dataset.csv.gz</code></pre>
+    <li>Download synonym data from NCBI. (link: <a href='ftp://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz' target="_blank">ftp://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz</a>)</li>
+    <li>Uncompress the files:
+    <pre><code>tar xzf experiment_input.tar.gz
+    gzip -d annotation_special_dataset.csv.gz
+    gzip -d All_Mammalia.gene_info.gz
+    gzip -d XX_special_dataset.csv.gz</code></pre>
     where XX can either be "microT" or "miRanda"</li>
     <li>Uncompress the annotations file with:
-    <pre><code>gzip -d annotation_special_dataset.csv.gz</code></pre></li>
-    <li>Download synonym data from NCBI. (For a link, see section "Required files")</li>
+    <pre><code></code></pre></li>
     <li>Place all files in the same folder as the .py and .bin files. If not, modify file paths accordingly.</li>
     <li>From inside the folder containing all files execute the following command to run the experiment:
-	    <pre><code>python bufet.py -interactions XX_special_dataset.csv -ontology annotation_special_dataset.csv -output output.txt 
-	    -miRNA input/expYY/miRNA-ZZ.txt -synonyms All_Mammalia.gene_info -processors PP --ensGO --miRanda</code></pre>
+	    <pre><code>python bufet.py -interactions XX_special_dataset.csv -ontology annotation_special_dataset.csv -output output.txt -miRNA input/expYY/miRNA-ZZ.txt -synonyms All_Mammalia.gene_info -processors PP --ensGO --miRanda</code></pre>
     where:
     	<ul>
     		<li>XX is either microT or miRanda</li>
@@ -73,7 +73,7 @@ This will compile the code and create a .bin file. <b>The .bin file must be in t
     <li> The file "output.txt" contains the results of the analysis</li>
 </ol></p>
 
-<h2>Required Files for analyses</h2>
+<h2>Files required for analyses</h2>
 
 <p>This script requires files from several public datasets, which must
 be downloaded by the user. Files required in order to run the script are described below:
