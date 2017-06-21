@@ -60,16 +60,17 @@ gzip -d microT_special_dataset.csv.gz
 gzip -d miRanda_special_dataset.csv.gz</code></pre></li>
     <li>Place all input files in the same folder as the .py and .bin files. If not, modify file paths accordingly.</li>
     <li>From inside the folder containing the .py and .bin files execute the following command to run the experiment:
-	    <pre><code>python bufet.py -interactions XX_special_dataset.csv -ontology annotation_special_dataset.csv -output output.txt -miRNA input/expYY/miRNA-ZZ.txt -synonyms All_Mammalia.gene_info -processors PP --ensGO --miRanda</code></pre>
+	    <pre><code>python bufet.py -interactions XX_special_dataset.csv -ontology annotation_special_dataset.csv -output output.txt -miRNA input/expYY/miRNA-ZZ.txt -synonyms All_Mammalia.gene_info -processors PP --ensGO --miRanda -iterations NN</code></pre>
     where:
     	<ul>
     		<li>XX is either microT or miRanda</li>
 		<li>YY is the number of the experiment (1-10)</li>
 		<li>ZZ is the number of miRNAs in the experiment input file (5,10,50,100).</li>
 		<li>PP is the number of processors</li>
+		<li>NN is the number of random miRNA groups(iterations)</li>
 	</ul>
 	<b>example:</b>
-	<pre><code>python bufet.py -interactions microT_special_dataset.csv -ontology annotation_special_dataset.csv -output output.txt -miRNA input/exp1/miRNA-50.txt -synonyms All_Mammalia.gene_info -processors 3 --ensGO --miRanda</code></pre>
+	<pre><code>python bufet.py -interactions microT_special_dataset.csv -ontology annotation_special_dataset.csv -output output.txt -miRNA input/exp1/miRNA-50.txt -synonyms All_Mammalia.gene_info -processors 3 -iterations 100000 --ensGO --miRanda</code></pre>
     <li> The file "output.txt" contains the results of the analysis.</li>
 </ol></p>
 
