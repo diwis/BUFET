@@ -56,8 +56,8 @@ This will compile the code and create a .bin file. <b>The .bin file must be in t
     <pre><code>tar xzf experiment_input.tar.gz
 gzip -d annotation_special_dataset.csv.gz
 gzip -d All_Mammalia.gene_info.gz
-gzip -d XX_special_dataset.csv.gz</code></pre>
-    where XX can either be "microT" or "miRanda"</li>
+gzip -d microT_special_dataset.csv.gz
+gzip -d miRanda_special_dataset.csv.gz</code></pre></li>
     <li>Place all input files in the same folder as the .py and .bin files. If not, modify file paths accordingly.</li>
     <li>From inside the folder containing the .py and .bin files execute the following command to run the experiment:
 	    <pre><code>python bufet.py -interactions XX_special_dataset.csv -ontology annotation_special_dataset.csv -output output.txt -miRNA input/expYY/miRNA-ZZ.txt -synonyms All_Mammalia.gene_info -processors PP --ensGO --miRanda</code></pre>
@@ -148,7 +148,8 @@ The script options are listed below:
     <li>"--miRanda": must be added when using prediction data from miRanda run.</li>
     <li>"-miScore [score]": miRanda score thresold if the miRanda mode is specified. Default score: "155"</li>
     <li>"-miFree [energy]": miRanda free energy threshold if the miRanda mode is specified. Default energy: "-20.0"</li>
-    <li>"--disable-file-check": disables the input file validation (not recommended).
+    <li>"--disable-interactions-check": disables the validation for the interaction file (not recommended).</li>
+    <li>"--disable-file-check": disables the validation for all files (not recommended).</li>
     <li>'-h" or "--help": print help message and exit</li>
 </ul><br />
 </p>
