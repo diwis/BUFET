@@ -5,10 +5,12 @@
 <li><a href="#introduction">Introduction</a></li>
 <li><a href="#system-requirements">System Requirements</a></li>
 <li><a href="#compiling-the-code">Compiling the code</a></li>
-<li><a href="#required-files">Required Files</a></li>
+<li><a href="#reproduction-of-an-experiment-in-the-manuscript-for-comparison-with-empiricalgo">Reproduction of an experiment in the manuscript for comparison with EmpiricalGO</a></li>
+<li><a href="#required-files-for-analyses">Required Files for analyses</a></li>
 <li><a href="#script-execution">Script Execution</a></li>
 <li><a href="#example-execution">Example Execution</a></li>
-<li><a href="#reproduction-of-an-experiment-in-the-manuscript-for-comparison-with-empiricalgo">Reproduction of an experiment in the manuscript for comparison with EmpiricalGO</a></li>
+
+
 </ol></p>
 
 <h2>Introduction</h2>
@@ -63,8 +65,8 @@ This will compile the code and create a .bin file. <b>The .bin file must be in t
 	    -miRNA input/expYY/miRNA-ZZ.txt -synonyms All_Mammalia.gene_info -processors PP --ensGO --miRanda</code></pre>
     where:
     	<ul>
-    		<li>X is either microT or miRanda</li>
-		<li>Y is the number of the experiment (1-10)</li>
+    		<li>XX is either microT or miRanda</li>
+		<li>YY is the number of the experiment (1-10)</li>
 		<li>ZZ is the number of miRNAs in the experiment input file (5,10,50,100).</li>
 		<li>PP is the number of processors</li>
 	</ul>
