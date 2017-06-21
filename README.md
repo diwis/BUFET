@@ -74,7 +74,7 @@ gzip -d miRanda_special_dataset.csv.gz</code></pre></li>
 		<li>PP is the number of processors</li>
 		<li>NN is the number of random miRNA groups(iterations)</li>
 	</ul>
-	<b>For example (microT interactions, experiment no 1, 50 miRNAs, 2 processors, 100000 iterations):</b>
+	For example (<b>interactions:</b> microT, <b>experiment</b> no 1, <b>miRNAs</b> 50, <b>processors</b> 2, <b>iterations:</b> 100000):
 	<pre><code>python bufet.py -interactions microT_special_dataset.csv -ontology annotation_special_dataset.csv -output output.txt -miRNA input/exp1/miRNA-50.txt -synonyms All_Mammalia.gene_info -processors 2 -iterations 100000 --ensGO --miRanda</code></pre>
     <li> The file "output.txt" contains the results of the analysis.</li>
 </ol></p>
