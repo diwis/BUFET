@@ -71,7 +71,7 @@ This will compile the code and create a .bin file. <b>The .bin file must be in t
     <li> The file "output.txt" contains the results of the analysis</li>
 </ol></p>
 
-<h2>Required Files</h2>
+<h2>Required Files for analyses</h2>
 
 <p>This script requires files from several public datasets, which must
 be downloaded by the user. Files required in order to run the script are described below:
