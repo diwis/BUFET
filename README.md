@@ -43,7 +43,7 @@ This will compile the code and create a .bin file. <b>The .bin file must be in t
 <p>In order to reproduce one of the experiments detailed in the paper manuscript please follow the instructions below:
 <ol>
     <li>Download the code and compile it according to the instructions (See section "Compiling the code")</li>
-    <li>Download the special file form (that can be run by both BUFET and EmpiricalGO) for the interaction and annotation datasets, as detailed in the "Availability of Data and Material" section of the manuscript (links also provided below). Then, download the input files from the link provided in the manuscript (also provided below).
+    <li>Download input files listed below:
     	<ul>
 	<li><a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/annotation_special_dataset.csv.gz">Annotation data</a></li>
 	<li><a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/microT_special_dataset.csv.gz">microT special form dataset</a></li>
