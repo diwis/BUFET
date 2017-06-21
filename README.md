@@ -54,14 +54,12 @@ This will compile the code and create a .bin file. <b>The .bin file must be in t
     <li>Download synonym data from NCBI. (link: <a href='ftp://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz' target="_blank">ftp://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz</a>)</li>
     <li>Uncompress the files:
     <pre><code>tar xzf experiment_input.tar.gz
-    gzip -d annotation_special_dataset.csv.gz
-    gzip -d All_Mammalia.gene_info.gz
-    gzip -d XX_special_dataset.csv.gz</code></pre>
+gzip -d annotation_special_dataset.csv.gz
+gzip -d All_Mammalia.gene_info.gz
+gzip -d XX_special_dataset.csv.gz</code></pre>
     where XX can either be "microT" or "miRanda"</li>
-    <li>Uncompress the annotations file with:
-    <pre><code></code></pre></li>
-    <li>Place all files in the same folder as the .py and .bin files. If not, modify file paths accordingly.</li>
-    <li>From inside the folder containing all files execute the following command to run the experiment:
+    <li>Place all input files in the same folder as the .py and .bin files. If not, modify file paths accordingly.</li>
+    <li>From inside the folder containing the .py and .bin files execute the following command to run the experiment:
 	    <pre><code>python bufet.py -interactions XX_special_dataset.csv -ontology annotation_special_dataset.csv -output output.txt -miRNA input/expYY/miRNA-ZZ.txt -synonyms All_Mammalia.gene_info -processors PP --ensGO --miRanda</code></pre>
     where:
     	<ul>
