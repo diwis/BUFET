@@ -21,8 +21,8 @@
 <p>In order for the program to run, the system must comply with the following specifications:
 <ul>
 	<li>Linux or other unix-like environments (Mac OS).</li>
-    	<li>Python interpreter (>= version 2.7) that can run from the command line</li>
-    	<li>g++ 4.8 and above</li>
+    	<li>Python interpreter (>= version 2.7) that can run from the command line.</li>
+    	<li>g++ 4.8 and above.</li>
 </ul>
 Additionally, due to the heavy computational load of the program, a multicore environment is recommended but not a prerequisite.</p>
 
@@ -30,8 +30,8 @@ Additionally, due to the heavy computational load of the program, a multicore en
 
 <p>In order to be able to run the BUFET script, you first need to compile the C++ program file. A Makefile is provided for that reason. The process is as follows:<br />
     <ol>
-    <li>Download the code and unzip the files</li>
-        <li>From the command line, navigate inside the folder containing the .cpp, .py and Make files</li>
+    <li>Download the code and unzip the files.</li>
+        <li>From the command line, navigate inside the folder containing the .cpp, .py and Makefile files.</li>
         <li>Run the following command:
             <pre><code>make</code></pre>
     </ol>
@@ -42,8 +42,8 @@ This will compile the code and create a .bin file. <b>The .bin file must be in t
 <h2>Reproduction of an experiment in the manuscript for comparison with EmpiricalGO</h2>
 <p>In order to reproduce one of the experiments detailed in the paper manuscript please follow the instructions below:
 <ol>
-    <li>Download the code and compile it according to the instructions (See section "Compiling the code")</li>
-    <li>Download input files listed below:
+    <li>Download the code and compile it according to the instructions (See section "Compiling the code").</li>
+    <li>Download the input files listed below:
     	<ul>
 	<li><a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/annotation_special_dataset.csv.gz">Annotation data</a></li>
 	<li><a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/microT_special_dataset.csv.gz">microT special form dataset</a></li>
@@ -70,7 +70,7 @@ gzip -d miRanda_special_dataset.csv.gz</code></pre></li>
 	</ul>
 	<b>example:</b>
 	<pre><code>python bufet.py -interactions microT_special_dataset.csv -ontology annotation_special_dataset.csv -output output.txt -miRNA input/exp1/miRNA-50.txt -synonyms All_Mammalia.gene_info -processors 3 --ensGO --miRanda</code></pre>
-    <li> The file "output.txt" contains the results of the analysis</li>
+    <li> The file "output.txt" contains the results of the analysis.</li>
 </ol></p>
 
 <h2>Files required for analyses</h2>
@@ -160,12 +160,11 @@ The script options are listed below:
 
 <h2>Example Execution</h2>
 <p><ol>
-    <li>Download the code and compile it according to the instructions (See section "Compiling the code")</li>
-    <li>Download synonym data from NCBI. (For a link, see section "Required files")</li>
+    <li>Download the code and compile it according to the instructions (See section "Compiling the code").</li>
+    <li>Download synonym data from NCBI (For a link, see section "Required files").</li>
     <li>Place all files in the same folder as the .py and .bin files.</li>
     <li>From inside the folder containing all files execute the following command to run the example:
-	    <pre><code>python bufet.py -interactions interactions_example.csv -ontology ontology_example.csv -output output.txt 
-	    -miRNA input_exampleXX.txt -synonyms All_Mammalia.gene_info</code></pre>
+	    <pre><code>python bufet.py -interactions interactions_example.csv -ontology ontology_example.csv -output output.txt -miRNA input_exampleXX.txt -synonyms All_Mammalia.gene_info</code></pre>
     where XX is the number of miRNAs in the sample input file (5,10,25,50).</li>
     <li> The file "output.txt" contains the results of the analysis</li>
 </ol></p>
