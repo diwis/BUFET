@@ -19,8 +19,13 @@
 
 <h2>System Requirements</h2>
 <p>In order for the program to run, the system must comply with the following specifications:
+<h4>Hardware:</h4>
 <ul>
-	<li>Linux or other unix-like environments (Mac OS).</li>
+	<li>A system with at least 4GB of RAM</li>
+</ul>
+<h4>Software:</h4>
+<ul>
+	<li>Linux or other unix-like environments (Mac OS)</li>
     	<li>Python interpreter (>= version 2.7) that can run from the command line.</li>
     	<li>g++ 4.8 and above.</li>
 </ul>
@@ -58,8 +63,8 @@ gzip -d annotation_special_dataset.csv.gz
 gzip -d All_Mammalia.gene_info.gz
 gzip -d microT_special_dataset.csv.gz
 gzip -d miRanda_special_dataset.csv.gz</code></pre></li>
-    <li>Place all input files in the same folder as the .py and .bin files. If not, modify file paths accordingly.</li>
-    <li>From inside the folder containing the .py and .bin files execute the following command to run the experiment:
+    <li>It is suggested that you place all of the above text files and folders in the same directory as the .py and .bin files. If you prefer to skip this step, please modify the following command by entering the custom paths for each file.</li>
+    <li>From inside the directory containing the .py and .bin files execute the following command to run the experiment:
 	    <pre><code>python bufet.py -interactions XX_special_dataset.csv -ontology annotation_special_dataset.csv -output output.txt -miRNA input/expYY/miRNA-ZZ.txt -synonyms All_Mammalia.gene_info -processors PP --ensGO --miRanda -iterations NN</code></pre>
     where:
     	<ul>
@@ -69,8 +74,8 @@ gzip -d miRanda_special_dataset.csv.gz</code></pre></li>
 		<li>PP is the number of processors</li>
 		<li>NN is the number of random miRNA groups(iterations)</li>
 	</ul>
-	<b>example:</b>
-	<pre><code>python bufet.py -interactions microT_special_dataset.csv -ontology annotation_special_dataset.csv -output output.txt -miRNA input/exp1/miRNA-50.txt -synonyms All_Mammalia.gene_info -processors 3 -iterations 100000 --ensGO --miRanda</code></pre>
+	<b>For example (microT interactions, experiment no 1, 5 miRNAs, 2 processors, 100000 iterations:</b>
+	<pre><code>python bufet.py -interactions microT_special_dataset.csv -ontology annotation_special_dataset.csv -output output.txt -miRNA input/exp1/miRNA-50.txt -synonyms All_Mammalia.gene_info -processors 2 -iterations 100000 --ensGO --miRanda</code></pre>
     <li> The file "output.txt" contains the results of the analysis.</li>
 </ol></p>
 
