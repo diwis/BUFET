@@ -36,6 +36,41 @@ Additionally, due to the heavy computational load of the program, a multicore en
 This will compile the code and create a .bin file. <b>The .bin file must be in the same folder as the .py at all times for the program to run</b>
 </p>
 
+
+<h2>Reproduction of an experiment in the manuscript for comparison with EmpiricalGO</h2>
+<p>In order to reproduce one of the experiments detailed in the paper manuscript please follow the instructions below:
+<ol>
+    <li>Download the code and compile it according to the instructions (See section "Compiling the code")</li>
+    <li>Download the special file form (that can be run by both BUFET and EmpiricalGO) for the interaction and annotation datasets, as detailed in the "Availability of Data and Material" section of the manuscript (links also provided below). Then, download the input files from the link provided in the manuscript (also provided below).
+    	<ul>
+	<li>Annotation data: <a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/annotation_special_dataset.csv.gz">http://carolina.imis.athena-innovation.gr/bufet/annotation_special_dataset.csv.gz</a></li>
+	<li>microT special form dataset: <a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/microT_special_dataset.csv.gz">http://carolina.imis.athena-innovation.gr/bufet/microT_special_dataset.csv.gz</a></li>
+	<li>miRanda special form dataset: <a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/miRanda_special_dataset.csv.gz">http://carolina.imis.athena-innovation.gr/bufet/miRanda_special_dataset.csv.gz</a></li>
+	<li>miRNA input files: <a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/experiment_input.tar.gz">http://carolina.imis.athena-innovation.gr/bufet/experiment_input.tar.gz</a></li>
+	</ul>
+    </li>
+    <li>Uncompress the miRNA input files with
+    <pre><code>tar xzf experiment_input.tar.gz</code></pre>
+    <li>Uncompress the interactions file with:
+    <pre><code>gzip -d XX_special_dataset.csv.gz</code></pre>
+    where XX can either be "microT" or "miRanda"</li>
+    <li>Uncompress the annotations file with:
+    <pre><code>gzip -d annotation_special_dataset.csv.gz</code></pre></li>
+    <li>Download synonym data from NCBI. (For a link, see section "Required files")</li>
+    <li>Place all files in the same folder as the .py and .bin files. If not, modify file paths accordingly.</li>
+    <li>From inside the folder containing all files execute the following command to run the experiment:
+	    <pre><code>python bufet.py -interactions XX_special_dataset.csv -ontology annotation_special_dataset.csv -output output.txt 
+	    -miRNA input/expYY/miRNA-ZZ.txt -synonyms All_Mammalia.gene_info -processors PP --ensGO --miRanda</code></pre>
+    where:
+    	<ul>
+    		<li>X is either microT or miRanda</li>
+		<li>Y is the number of the experiment (1-10)</li>
+		<li>ZZ is the number of miRNAs in the experiment input file (5,10,50,100).</li>
+		<li>PP is the number of processors</li>
+	</ul>
+    <li> The file "output.txt" contains the results of the analysis</li>
+</ol></p>
+
 <h2>Required Files</h2>
 
 <p>This script requires files from several public datasets, which must
@@ -129,42 +164,6 @@ The script options are listed below:
     where XX is the number of miRNAs in the sample input file (5,10,25,50).</li>
     <li> The file "output.txt" contains the results of the analysis</li>
 </ol></p>
-
-<h2>Reproduction of an experiment in the manuscript for comparison with EmpiricalGO</h2>
-<p>In order to reproduce one of the experiments detailed in the paper manuscript please follow the instructions below:
-<ol>
-    <li>Download the code and compile it according to the instructions (See section "Compiling the code")</li>
-    <li>Download the special file form (that can be run by both BUFET and EmpiricalGO) for the interaction and annotation datasets, as detailed in the "Availability of Data and Material" section of the manuscript (links also provided below). Then, download the input files from the link provided in the manuscript (also provided below).
-    	<ul>
-	<li>Annotation data: <a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/annotation_special_dataset.csv.gz">http://carolina.imis.athena-innovation.gr/bufet/annotation_special_dataset.csv.gz</a></li>
-	<li>microT special form dataset: <a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/microT_special_dataset.csv.gz">http://carolina.imis.athena-innovation.gr/bufet/microT_special_dataset.csv.gz</a></li>
-	<li>miRanda special form dataset: <a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/miRanda_special_dataset.csv.gz">http://carolina.imis.athena-innovation.gr/bufet/miRanda_special_dataset.csv.gz</a></li>
-	<li>miRNA input files: <a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/experiment_input.tar.gz">http://carolina.imis.athena-innovation.gr/bufet/experiment_input.tar.gz</a></li>
-	</ul>
-    </li>
-    <li>Uncompress the miRNA input files with
-    <pre><code>tar xzf experiment_input.tar.gz</code></pre>
-    <li>Uncompress the interactions file with:
-    <pre><code>gzip -d XX_special_dataset.csv.gz</code></pre>
-    where XX can either be "microT" or "miRanda"</li>
-    <li>Uncompress the annotations file with:
-    <pre><code>gzip -d annotation_special_dataset.csv.gz</code></pre></li>
-    <li>Download synonym data from NCBI. (For a link, see section "Required files")</li>
-    <li>Place all files in the same folder as the .py and .bin files. If not, modify file paths accordingly.</li>
-    <li>From inside the folder containing all files execute the following command to run the experiment:
-	    <pre><code>python bufet.py -interactions XX_special_dataset.csv -ontology annotation_special_dataset.csv -output output.txt 
-	    -miRNA input/expYY/miRNA-ZZ.txt -synonyms All_Mammalia.gene_info -processors PP --ensGO --miRanda</code></pre>
-    where:
-    	<ul>
-    		<li>X is either microT or miRanda</li>
-		<li>Y is the number of the experiment (1-10)</li>
-		<li>ZZ is the number of miRNAs in the experiment input file (5,10,50,100).</li>
-		<li>PP is the number of processors</li>
-	</ul>
-    <li> The file "output.txt" contains the results of the analysis</li>
-</ol></p>
-
-
 
 <h2>Contact</h2>
 <p>For any problems with the execution of this code please contact us at zagganas@imis.athena-innovation.gr</p>
