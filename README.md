@@ -45,13 +45,13 @@ This will compile the code and create a .bin file. <b>The .bin file must be in t
     <li>Download the code and compile it according to the instructions (See section "Compiling the code")</li>
     <li>Download the special file form (that can be run by both BUFET and EmpiricalGO) for the interaction and annotation datasets, as detailed in the "Availability of Data and Material" section of the manuscript (links also provided below). Then, download the input files from the link provided in the manuscript (also provided below).
     	<ul>
-	<li>Annotation data: <a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/annotation_special_dataset.csv.gz">http://carolina.imis.athena-innovation.gr/bufet/annotation_special_dataset.csv.gz</a></li>
-	<li>microT special form dataset: <a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/microT_special_dataset.csv.gz">http://carolina.imis.athena-innovation.gr/bufet/microT_special_dataset.csv.gz</a></li>
-	<li>miRanda special form dataset: <a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/miRanda_special_dataset.csv.gz">http://carolina.imis.athena-innovation.gr/bufet/miRanda_special_dataset.csv.gz</a></li>
-	<li>miRNA input files: <a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/experiment_input.tar.gz">http://carolina.imis.athena-innovation.gr/bufet/experiment_input.tar.gz</a></li>
-	</ul>
-    </li>
-    <li>Download synonym data from NCBI. (link: <a href='ftp://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz' target="_blank">ftp://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz</a>)</li>
+	<li><a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/annotation_special_dataset.csv.gz">Annotation data</a></li>
+	<li><a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/microT_special_dataset.csv.gz">microT special form dataset</a></li>
+	<li><a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/miRanda_special_dataset.csv.gz">miRanda special form dataset</a></li>
+	<li><a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/experiment_input.tar.gz">miRNA input files</a></li>
+	<li><a href='ftp://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz' target="_blank">Synonym data from NCBI</a></li>
+	</ul></li>
+	
     <li>Uncompress the files:
     <pre><code>tar xzf experiment_input.tar.gz
 gzip -d annotation_special_dataset.csv.gz
@@ -68,6 +68,8 @@ gzip -d miRanda_special_dataset.csv.gz</code></pre></li>
 		<li>ZZ is the number of miRNAs in the experiment input file (5,10,50,100).</li>
 		<li>PP is the number of processors</li>
 	</ul>
+	<b>example:</b>
+	<pre><code>python bufet.py -interactions microT_special_dataset.csv -ontology annotation_special_dataset.csv -output output.txt -miRNA input/exp1/miRNA-50.txt -synonyms All_Mammalia.gene_info -processors 3 --ensGO --miRanda</code></pre>
     <li> The file "output.txt" contains the results of the analysis</li>
 </ol></p>
 
@@ -148,7 +150,9 @@ The script options are listed below:
     <li>"--miRanda": must be added when using prediction data from miRanda run.</li>
     <li>"-miScore [score]": miRanda score thresold if the miRanda mode is specified. Default score: "155"</li>
     <li>"-miFree [energy]": miRanda free energy threshold if the miRanda mode is specified. Default energy: "-20.0"</li>
-    <li>"--disable-interactions-check": disables the validation for the interaction file (not recommended).</li>
+    <li>"--disable-interactions-check": disables the validation for the interactions file (not recommended).</li>
+    <li>"--disable-ontology-check": disables the validation for the ontology file (not recommended).</li>
+    <li>"--disable-synonyms-check": disables the validation for the synonyms file (not recommended).</li>
     <li>"--disable-file-check": disables the validation for all files (not recommended).</li>
     <li>'-h" or "--help": print help message and exit</li>
 </ul><br />
