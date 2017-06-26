@@ -72,8 +72,8 @@ gzip -d All_Mammalia.gene_info.gz</code></pre>
 		<li>NN is the number of random miRNA groups(iterations)</li>
 	</ul>
 	<b>For example (interactions: microT, experiment: no 1, miRNAs: 50, processors: 2, iterations: 10000):</b>
-	<pre><code>python bufet.py -interactions microT_dataset.csv -ontology annotation_dataset.csv -output output.txt -miRNA input/exp1/miRNA-50.txt -synonyms All_Mammalia.gene_info -processors 2 -iterations 10000</code></pre>
-    <li> The file "output.txt" contains the results of the analysis.</li>
+	<pre><code>python bufet.py -interactions microT_dataset.csv -ontology annotation_dataset.csv -output output-1-50.txt -miRNA input/exp1/miRNA-50.txt -synonyms All_Mammalia.gene_info -processors 2 -iterations 10000</code></pre>
+    <li> The file "output-1-50.txt" contains the results of the analysis.</li>
 </ol></p>
 
 <h2>Files required for analyses</h2>
