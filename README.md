@@ -5,7 +5,7 @@
 <li><a href="#introduction">Introduction</a></li>
 <li><a href="#system-requirements">System Requirements</a></li>
 <li><a href="#compiling-the-code">Compiling the code</a></li>
-<li><a href="#reproduction-of-an-experiment-in-the-manuscript-for-comparison-with-empiricalgo">Reproduction of an experiment in the manuscript for comparison with EmpiricalGO</a></li>
+<li><a href="#reproduction-of-an-experiment-in-the-manuscript">Reproduction of an experiment in the manuscript</a></li>
 <li><a href="#files-required-for-analyses">Files Required for analyses</a></li>
 <li><a href="#script-execution">Script Execution</a></li>
 <li><a href="#example-execution">Example Execution</a></li>
@@ -44,25 +44,22 @@ This will compile the code and create a .bin file. <b>The .bin file must be in t
 </p>
 
 
-<h2>Reproduction of an experiment in the manuscript for comparison with EmpiricalGO</h2>
+<h2>Reproduction of an experiment in the manuscript</h2>
 <p>In order to reproduce one of the experiments detailed in the paper manuscript please follow the instructions below:
 <ol>
     <li>Download the code and compile it according to the instructions (See section "Compiling the code").</li>
     <li>Download the input files listed below:
     	<ul>
-	<li><a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/annotation_special_dataset.csv.gz">Annotation data</a></li>
-	<li><a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/microT_special_dataset.csv.gz">microT special form dataset</a></li>
-	<li><a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/miRanda_special_dataset.csv.gz">miRanda special form dataset</a></li>
+	<li><a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/annotation_dataset.csv">Annotation data</a></li>
+	<li><a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/microT_dataset.csv">microT dataset</a></li>
+	<li><a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/miRanda_dataset.csv">miRanda dataset</a></li>
 	<li><a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/experiment_input.tar.gz">miRNA input files</a></li>
 	<li><a target="_blank" href="http://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz">Synonym data from NCBI</a></li>
 	</ul>
     </li>
     <li>Uncompress the files:
     <pre><code>tar xzf experiment_input.tar.gz
-gzip -d annotation_special_dataset.csv.gz
 gzip -d All_Mammalia.gene_info.gz
-gzip -d microT_special_dataset.csv.gz
-gzip -d miRanda_special_dataset.csv.gz</code></pre></li>
     <li>It is suggested that you place all of the above text files and folders in the same directory as the .py and .bin files. If you prefer to skip this step, please modify the following command by entering the custom paths for each file.</li>
     <li>From inside the directory containing the .py and .bin files execute the following command to run the experiment:
 	    <pre><code>python bufet.py -interactions XX_special_dataset.csv -ontology annotation_special_dataset.csv -output output.txt -miRNA input/expYY/miRNA-ZZ.txt -synonyms All_Mammalia.gene_info -processors PP --ensGO --miRanda -iterations NN</code></pre>
