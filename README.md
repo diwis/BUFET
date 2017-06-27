@@ -133,8 +133,8 @@ The script options are listed below:
 
 <h3>3iii. Example Execution</h3>
 <p><ol>
-    <li>Download the code and compile it according to the instructions (See section "Compiling the code").</li>
-    <li>Download synonym data from NCBI (For a link, see section "Required files").</li>
+<li><a href="https://github.com/diwis/BUFET/archive/master.zip">Download</a> the code and compile it according to the instructions (See section "Compiling BUFET").</li>
+    <li><a target="_blank" href="http://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz">Download</a> synonym data from NCBI.</li>
     <li>Place all files in the same folder as the .py and .bin files.</li>
     <li>From inside the folder containing all files execute the following command to run the example:
 	    <pre><code>python bufet.py -interactions interactions_example.csv -ontology ontology_example.csv -output output.txt -miRNA input_exampleXX.txt -synonyms All_Mammalia.gene_info</code></pre>
