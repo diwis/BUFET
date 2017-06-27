@@ -207,23 +207,25 @@ def checkSynonymsFile(synonyms_file):
 
 #Print help message
 def printOptions():
-	print('Usage:\n\t\tpython bufet.py [options]\n\nAvailable options:')
-	print('-miRNA: path to the miRNA group file')
-	print('-interactions: path to the interactions file')
-	print('-ontology: path to the ontology file')
-	print('-iterations: number of random permutations')
-	print('-output: path to the output file (overwritten if it exists)')
-	print('-processors: number of threads to use for calculations')
-	print('-species: "human" or "mouse"')
-	print('--miRanda: use interactions file from miRanda run')
-	print('-miFree: miRanda free energy (valid only if the --miRanda flag is invoked)')
-	print('-miScore: miRanda free energy (valid only if the --miRanda flag is invoked)')
-	print('--ensGO: use ontology file downloaded from Ensembl')
-	print('--disable-file-check: (quicker but not recommended) disable all file validations.')
-	print('--disable-interactions-check: (quicker but not recommended) disable existence and file format validation for the interactions file.')
-	print('--disable-ontology-check: (quicker but not recommended) disable existence and file format validation for the ontology file.')
-	print('--disable-synonyms-check: (quicker but not recommended) disable existence and file format validation for the synonyms file.')
-	print('--help: print this message')
+	print('Usage:\n\t\tpython bufet.py [options]\n\nMandatory arguments:\n')
+	print('\t-miRNA <filePath>: path to the miRNA group file')
+	print('\t-interactions filePath>: path to the interactions file')
+	print('\t-ontology <filePath>: path to the ontology file')
+	print('\t-synonyms <filePath>: path to the synonyms file\n')
+	print('Additional options:\n')
+	print('\t-iterations: number of random permutations')
+	print('\t-output <filePath>: path to the output file (overwritten if it exists)')
+	print('\t-processors: number of threads to use for calculations')
+	print('\t-species: "human" or "mouse"')
+	print('\t-miFree: miRanda free energy (valid only if the --miRanda flag is invoked)')
+	print('\t-miScore: miRanda free energy (valid only if the --miRanda flag is invoked)\n')
+	print('\t--miRanda: use interactions file from miRanda run')
+	print('\t--ensGO: use ontology file downloaded from Ensembl')
+	print('\t--disable-file-check: (quicker but not recommended) disable all file validations.')
+	print('\t--disable-interactions-check: (quicker but not recommended) disable existence and file format validation for the interactions file.')
+	print('\t--disable-ontology-check: (quicker but not recommended) disable existence and file format validation for the ontology file.')
+	print('\t--disable-synonyms-check: (quicker but not recommended) disable existence and file format validation for the synonyms file.')
+	print('\t--help: print this message and exit')
 
 commandLine=sys.argv
 available_species={'human':'9606','mouse':'10090'}
@@ -259,12 +261,12 @@ while i <len(commandLine):
 			print ('\nError: unrecognized option: ' + commandLine[i] + '\nFor the list of options, run the script with -h or --help.')
 			exit(7)
 	elif commandLine[i][0]=='-':
-		if commandLine[i] not in options:
-			print ('\nError: unrecognized option: ' + commandLine[i] + '\nFor the list of options, run the script with -h or --help.')
-			exit(7)
 		if (commandLine[i]=='-h') or (commandLine[i]=='-help'):
 			options['-help']='yes'
 			break
+		if commandLine[i] not in options:
+			print ('\nError: unrecognized option: ' + commandLine[i] + '\nFor the list of options, run the script with -h or --help.')
+			exit(7)
 		if i+1>=len(commandLine):
 			print('\nError: Argument ' + commandLine[i] + ' is missing a value.')
 			exit(7)
