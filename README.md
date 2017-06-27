@@ -176,7 +176,10 @@ Moreover, there are two miRNA-to-gene interaction files, namely microT_dataset.c
     <li>microT and miRanda interactions (microT_dataset.csv, miRanda_dataset.csv)</li>
     <li>10000,100000,1000000 random miRNA groups</li>
     <li>1 and 7 cores
-    </ul></li>
+    </ul>
+For example (miRanda, experiment no 8, 10 miRNAs, 100000 random groups, 7 cores:
+<pre><code>python bufet.py -interactions miRanda_dataset.csv -ontology annotation_dataset.csv -output output.txt -miRNA input/exp8/miRNA-10.txt -synonyms All_Mammalia.gene_info -processors 7 -iterations 100000</code></pre>
+</li>
 </ol></p>
 
 <h2>5. Contact</h2>
