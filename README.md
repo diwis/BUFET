@@ -155,7 +155,7 @@ The script options are listed below:
 	<li><a target="_blank" href="http://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz">Synonym data from NCBI</a></li>
 	</ul>
     </li>
-    <li>Uncompress the files:
+    <li>Decompress the files:
     <pre><code>tar xzf experiment_input.tar.gz
 gzip -d All_Mammalia.gene_info.gz</code></pre>
     <li>Assuming that your current folder contains the .py, .bin, and all input files, run the experiment as follows (or add the right paths for each file, accordingly):
