@@ -145,7 +145,7 @@ The script options are listed below:
 <h2>4. Reproduction of the paper's experiments</h2>
 <p>In order to reproduce one of the experiments detailed in the paper manuscript please follow the instructions below:
 <ol>
-    <li>Download the code and compile it according to the instructions (See section "Compiling the code").</li>
+<li><a href="https://github.com/diwis/BUFET/archive/master.zip">Download</a> the code and compile it according to the instructions (See section "Compiling the code").</li>
     <li>Download the input files listed below:
     	<ul>
 	<li><a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/annotation_dataset.csv">Annotation data</a></li>
