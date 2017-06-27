@@ -150,11 +150,11 @@ The script options are listed below:
     	<ul>
 	<li>GO gene annotations for Ensembl v.69</li>
 	<li>microT miRNA-gene interactions for miRBase v.21 and Ensembl v.69</li>
-	<li>miRanda miRNA-gene interactions for miRBase v.21 and Ensembl v.69: created by running the miRanda software</li>
+	<li>miRanda miRNA-gene interactions for miRBase v.21 and Ensembl v.69</li>
 	<li>miRNA input files</li>
 	<li>Synonym data from NCBI</li>
 	</ul>
-	All of the files listed above can be found in a compressed file <a href="http://carolina.imis.athena-innovation.gr/bufet/experiment_input.tar.gz">here</a>.
+	All files listed above can be found in a compressed file <a href="http://carolina.imis.athena-innovation.gr/bufet/experiment_input.tar.gz">here</a>.
     </li>
     <li>Decompress the file:
     <pre><code>tar xzf experiment_input.tar.gz</code></pre>
