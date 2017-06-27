@@ -1,16 +1,17 @@
-# Boosting the Unbiased Functional Enrichment Analysis (BUFET)
+<h1>Boosting the Unbiased Functional Enrichment Analysis (BUFET)</h1>
 <h2>Table of contents</h2>
 <p>
 <ol>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#compiling-bufet">Compiling BUFET</a></li>
-<li>Executing BUFET
+<li><a href="#1-introduction">Introduction</a></li>
+<li><a href="#2-compiling-bufet">Compiling BUFET</a></li>
+<li><a href="#3-executing-bufet">Executing BUFET</a>
 <ol>
-	<li><a href="#files-required-for-analyses">Files Required for analyses</a></li>
-	<li><a href="#script-execution">Script Execution</a></li>
-	<li><a href="#example-execution">Example Execution</a></li>
+	<li><a href="#3i-files-required">Files Required</a></li>
+	<li><a href="#3ii-script-execution">Script Execution</a></li>
+	<li><a href="#3iii-example-execution">Example Execution</a></li>
 </ol></li>
-<li><a href="#reproduction-of-an-experiment-in-the-manuscript">Reproduction of an experiment in the manuscript</a></li>
+<li><a href="#4-reproduction-of-an-experiment-in-the-manuscript">Reproduction of the paper's experiments</a></li>
+<li><a href="#contact">Contact</a></li>
 
 
 
@@ -46,7 +47,7 @@ This will compile the code and create a .bin file. <b>The .bin file must be in t
 
 <h2>3. Executing BUFET</h2>
 
-<h3>3i. Files required for analyses</h3>
+<h3>3i. Files required</h3>
 
 <p>This script requires files from several public datasets, which must
 be downloaded by the user. Files required in order to run the script are described below:
@@ -142,10 +143,7 @@ The script options are listed below:
     <li> The file "output.txt" contains the results of the analysis</li>
 </ol></p>
 
-<h2>Contact</h2>
-<p>For any problems with the execution of this code please contact us at zagganas@imis.athena-innovation.gr</p>
-
-<h2>Reproduction of an experiment in the manuscript</h2>
+<h2>4. Reproduction of the paper's experiments</h2>
 <p>In order to reproduce one of the experiments detailed in the paper manuscript please follow the instructions below:
 <ol>
     <li>Download the code and compile it according to the instructions (See section "Compiling the code").</li>
@@ -175,3 +173,6 @@ gzip -d All_Mammalia.gene_info.gz</code></pre>
 	<pre><code>python bufet.py -interactions microT_dataset.csv -ontology annotation_dataset.csv -output output-1-50.txt -miRNA input/exp1/miRNA-50.txt -synonyms All_Mammalia.gene_info -processors 2 -iterations 10000</code></pre>
     <li> The file "output-1-50.txt" contains the results of the analysis.</li>
 </ol></p>
+
+<h2>5. Contact</h2>
+<p>For any problems with the execution of this code please contact us at zagganas@imis.athena-innovation.gr</p>
