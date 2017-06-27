@@ -146,18 +146,18 @@ The script options are listed below:
 <p>In order to reproduce one of the experiments detailed in the paper manuscript please follow the instructions below:
 <ol>
 <li><a href="https://github.com/diwis/BUFET/archive/master.zip">Download</a> the code and compile it according to the instructions (See section "Compiling the code").</li>
-    <li>Download the input files listed below:
+    <li>Files required for the reproduction of the experiments:
     	<ul>
-	<li><a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/annotation_dataset.csv">Annotation data</a></li>
-	<li><a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/microT_dataset.csv">microT dataset</a></li>
-	<li><a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/miRanda_dataset.csv">miRanda dataset</a></li>
-	<li><a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/experiment_input.tar.gz">miRNA input files</a></li>
-	<li><a target="_blank" href="http://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz">Synonym data from NCBI</a></li>
+	<li>GO gene annotations for Ensembl v.69</li>
+	<li>microT miRNA-gene interactions for miRBase v.21 and Ensembl v.69</li>
+	<li>miRanda miRNA-gene interactions for miRBase v.21 and Ensembl v.69: created by running the miRanda software</li>
+	<li>miRNA input files</li>
+	<li>Synonym data from NCBI</li>
 	</ul>
+	All of the files listed above can be found in a compressed file <a href="http://carolina.imis.athena-innovation.gr/bufet/experiment_input.tar.gz">here</a>.
     </li>
-    <li>Decompress the files:
-    <pre><code>tar xzf experiment_input.tar.gz
-gzip -d All_Mammalia.gene_info.gz</code></pre>
+    <li>Decompress the file:
+    <pre><code>tar xzf experiment_input.tar.gz</code></pre>
     <li>Assuming that your current folder contains the .py, .bin, and all input files, run the experiment as follows (or add the right paths for each file, accordingly):
 	    <pre><code>python bufet.py -interactions XX_dataset.csv -ontology annotation_dataset.csv -output output.txt -miRNA input/expYY/miRNA-ZZ.txt -synonyms All_Mammalia.gene_info -processors PP -iterations NN</code></pre>
     where:
