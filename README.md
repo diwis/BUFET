@@ -32,8 +32,7 @@
 	<li>Linux or other unix-like environments (Mac OS)</li>
     	<li>Python interpreter (>= version 2.7) that can run from the command line.</li>
     	<li>g++ 4.8 and above.</li>
-</ul>
-Additionally, due to the heavy computational load of the program, a multicore environment is recommended but not a prerequisite.</p>
+</ul></p>
 
 <p>In order to be able to run the BUFET script, you first need to compile the C++ program file. A Makefile is provided for that reason. The process is as follows:<br />
     <ol>
