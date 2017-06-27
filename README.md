@@ -159,7 +159,7 @@ The script options are listed below:
     <li>Decompress the file:
     <pre><code>tar xzf experiment_input.tar.gz</code></pre>
     <li>Assuming that your current folder contains the .py, .bin, and all input files, run the experiment as follows (or add the right paths for each file, accordingly):
-	    <pre><code>python bufet.py -interactions microT_dataset.csv -ontology annotation_dataset.csv -output output.txt -miRNA input/exp1/miRNA-50.txt -synonyms All_Mammalia.gene_info -processors 1 -iterations 10000</code></pre>
+	    <pre><code>python bufet.py -interactions microT_dataset.csv -ontology annotation_dataset.csv -output output.txt -miRNA input/exp1/miRNA-5.txt -synonyms All_Mammalia.gene_info -processors 1 -iterations 10000</code></pre>
 Running this command will execute BUFET for the 1st of the 10 experiments, with an input of 5 miRNAs, microT interactions, 1 processor and 10000 random miRNA groups.</li>
 
 <li>The input for each experiment (1-10) is located inside folders exp1, exp2, .., exp10 respectively, which are located inside the "input" folder. Each directory contains the following input files:
