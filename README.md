@@ -3,21 +3,24 @@
 <p>
 <ol>
 <li><a href="#introduction">Introduction</a></li>
-<li><a href="#system-requirements">System Requirements</a></li>
-<li><a href="#compiling-the-code">Compiling the code</a></li>
+<li><a href="#compiling-bufet">Compiling BUFET</a></li>
+<li>Executing BUFET
+<ol>
+	<li><a href="#files-required-for-analyses">Files Required for analyses</a></li>
+	<li><a href="#script-execution">Script Execution</a></li>
+	<li><a href="#example-execution">Example Execution</a></li>
+</ol></li>
 <li><a href="#reproduction-of-an-experiment-in-the-manuscript">Reproduction of an experiment in the manuscript</a></li>
-<li><a href="#files-required-for-analyses">Files Required for analyses</a></li>
-<li><a href="#script-execution">Script Execution</a></li>
-<li><a href="#example-execution">Example Execution</a></li>
+
 
 
 </ol></p>
 
-<h2>Introduction</h2>
-<p>BUFET is a free software designed to speed up the unbiased miRNA enrichment analysis algorithm as described by Bleazard et al. in <a href="http://bioinformatics.oxfordjournals.org/content/31/10/1592" target="_blank">in their paper</a></p>
+<h2>1. Introduction</h2>
+<p>BUFET is a free software designed to speed up the unbiased miRNA enrichment analysis algorithm as described by Bleazard et al. in <a href="http://bioinformatics.oxfordjournals.org/content/31/10/1592" target="_blank">in their paper</a>.</p>
 <p>The BUFET algorithm generates an empirical distribution of genes targeted by miRNA and calculates p-values for related biological processes. Benjamini-Hochberg FDR correction produces a '*' or '**' for significance at 0.05 FDR and 0.01 FDR respectively.</p>
 
-<h2>System Requirements</h2>
+<h2>2. Compiling BUFET</h2>
 <p>In order for the program to run, the system must comply with the following specifications:
 <h4>Hardware:</h4>
 <ul>
@@ -31,8 +34,6 @@
 </ul>
 Additionally, due to the heavy computational load of the program, a multicore environment is recommended but not a prerequisite.</p>
 
-<h2>Compiling the code</h2>
-
 <p>In order to be able to run the BUFET script, you first need to compile the C++ program file. A Makefile is provided for that reason. The process is as follows:<br />
     <ol>
     <li>Download the code and unzip the files.</li>
@@ -43,40 +44,9 @@ Additionally, due to the heavy computational load of the program, a multicore en
 This will compile the code and create a .bin file. <b>The .bin file must be in the same folder as the .py at all times for the program to run</b>
 </p>
 
+<h2>3. Executing BUFET</h2>
 
-<h2>Reproduction of an experiment in the manuscript</h2>
-<p>In order to reproduce one of the experiments detailed in the paper manuscript please follow the instructions below:
-<ol>
-    <li>Download the code and compile it according to the instructions (See section "Compiling the code").</li>
-    <li>Download the input files listed below:
-    	<ul>
-	<li><a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/annotation_dataset.csv">Annotation data</a></li>
-	<li><a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/microT_dataset.csv">microT dataset</a></li>
-	<li><a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/miRanda_dataset.csv">miRanda dataset</a></li>
-	<li><a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/experiment_input.tar.gz">miRNA input files</a></li>
-	<li><a target="_blank" href="http://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz">Synonym data from NCBI</a></li>
-	</ul>
-    </li>
-    <li>Uncompress the files:
-    <pre><code>tar xzf experiment_input.tar.gz
-gzip -d All_Mammalia.gene_info.gz</code></pre>
-    <li>It is suggested that you place all of the above text files and folders in the same directory as the .py and .bin files. If you prefer to skip this step, please modify the following command by entering the custom paths for each file.</li>
-    <li>From inside the directory containing the .py and .bin files execute the following command to run the experiment:
-	    <pre><code>python bufet.py -interactions XX_dataset.csv -ontology annotation_dataset.csv -output output.txt -miRNA input/expYY/miRNA-ZZ.txt -synonyms All_Mammalia.gene_info -processors PP -iterations NN</code></pre>
-    where:
-    	<ul>
-    		<li>XX is either microT or miRanda</li>
-		<li>YY is the number of the experiment (1-10)</li>
-		<li>ZZ is the number of miRNAs in the experiment input file (5,10,50,100).</li>
-		<li>PP is the number of processors</li>
-		<li>NN is the number of random miRNA groups(iterations)</li>
-	</ul>
-	<b>For example (interactions: microT, experiment: no 1, miRNAs: 50, processors: 2, iterations: 10000):</b>
-	<pre><code>python bufet.py -interactions microT_dataset.csv -ontology annotation_dataset.csv -output output-1-50.txt -miRNA input/exp1/miRNA-50.txt -synonyms All_Mammalia.gene_info -processors 2 -iterations 10000</code></pre>
-    <li> The file "output-1-50.txt" contains the results of the analysis.</li>
-</ol></p>
-
-<h2>Files required for analyses</h2>
+<h3>3i. Files required for analyses</h3>
 
 <p>This script requires files from several public datasets, which must
 be downloaded by the user. Files required in order to run the script are described below:
@@ -132,7 +102,7 @@ hsa-miR-132-3p</code></pre>
    </ol>
 Note that all files listed above can contain header lines starting with the <b>"#"</b> character.</p>
 
-<h2>Script Execution</h2>
+<h3>3ii. Script Execution</h3>
 
 <p>Navigate inside the folder containing the .py and .bin files and run the following command:
 
@@ -161,7 +131,7 @@ The script options are listed below:
 </ul><br />
 </p>
 
-<h2>Example Execution</h2>
+<h3>3iii. Example Execution</h3>
 <p><ol>
     <li>Download the code and compile it according to the instructions (See section "Compiling the code").</li>
     <li>Download synonym data from NCBI (For a link, see section "Required files").</li>
@@ -174,3 +144,34 @@ The script options are listed below:
 
 <h2>Contact</h2>
 <p>For any problems with the execution of this code please contact us at zagganas@imis.athena-innovation.gr</p>
+
+<h2>Reproduction of an experiment in the manuscript</h2>
+<p>In order to reproduce one of the experiments detailed in the paper manuscript please follow the instructions below:
+<ol>
+    <li>Download the code and compile it according to the instructions (See section "Compiling the code").</li>
+    <li>Download the input files listed below:
+    	<ul>
+	<li><a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/annotation_dataset.csv">Annotation data</a></li>
+	<li><a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/microT_dataset.csv">microT dataset</a></li>
+	<li><a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/miRanda_dataset.csv">miRanda dataset</a></li>
+	<li><a target="_blank" href="http://carolina.imis.athena-innovation.gr/bufet/experiment_input.tar.gz">miRNA input files</a></li>
+	<li><a target="_blank" href="http://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz">Synonym data from NCBI</a></li>
+	</ul>
+    </li>
+    <li>Uncompress the files:
+    <pre><code>tar xzf experiment_input.tar.gz
+gzip -d All_Mammalia.gene_info.gz</code></pre>
+    <li>Assuming that your current folder contains the .py, .bin, and all input files, run the experiment as follows (or add the right paths for each file, accordingly):
+	    <pre><code>python bufet.py -interactions XX_dataset.csv -ontology annotation_dataset.csv -output output.txt -miRNA input/expYY/miRNA-ZZ.txt -synonyms All_Mammalia.gene_info -processors PP -iterations NN</code></pre>
+    where:
+    	<ul>
+    		<li>XX is either microT or miRanda</li>
+		<li>YY is the number of the experiment (1-10)</li>
+		<li>ZZ is the number of miRNAs in the experiment input file (5,10,50,100).</li>
+		<li>PP is the number of processors</li>
+		<li>NN is the number of random miRNA groups(iterations)</li>
+	</ul>
+	<b>For example (interactions: microT, experiment: no 1, miRNAs: 50, processors: 2, iterations: 10000):</b>
+	<pre><code>python bufet.py -interactions microT_dataset.csv -ontology annotation_dataset.csv -output output-1-50.txt -miRNA input/exp1/miRNA-50.txt -synonyms All_Mammalia.gene_info -processors 2 -iterations 10000</code></pre>
+    <li> The file "output-1-50.txt" contains the results of the analysis.</li>
+</ol></p>
