@@ -10,8 +10,8 @@
 	<li><a href="#3ii-script-execution">Script Execution</a></li>
 	<li><a href="#3iii-example-execution">Example Execution</a></li>
 </ol></li>
-<li><a href="#4-reproduction-of-an-experiment-in-the-manuscript">Reproduction of the paper's experiments</a></li>
-<li><a href="#contact">Contact</a></li>
+<li><a href="#4-reproduction-of-the-papers-experiments">Reproduction of the paper's experiments</a></li>
+<li><a href="#5-contact">Contact</a></li>
 
 
 
