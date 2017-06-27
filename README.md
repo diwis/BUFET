@@ -162,19 +162,22 @@ The script options are listed below:
 	    <pre><code>python bufet.py -interactions microT_dataset.csv -ontology annotation_dataset.csv -output output.txt -miRNA input/exp1/miRNA-5.txt -synonyms All_Mammalia.gene_info -processors 1 -iterations 10000</code></pre>
 Running this command will execute BUFET for the 1st of the 10 experiments, with an input of 5 miRNAs, microT interactions, 1 processor and 10000 random miRNA groups. The file "output.txt" contains the results of the analysis.</li>
 
-<li>The input for each experiment (1-10) is located inside folders exp1, exp2, .., exp10 respectively, which are located inside the "input" folder. Each directory contains the following input files:
+<li>Reproduce the rest of the experiments:
+
+The input for each experiment (1-10) is located inside folders exp1, exp2, .., exp10 respectively, which are located inside the "input" folder. Each directory contains the following input files:
 <ul>
 <li>miRNA-5.txt: input file containing 5 miRNAs</li>
 <li>miRNA-10.txt: input file containing 10 miRNAs</li>
 <li>miRNA-50.txt: input file containing 50 miRNAs</li>
 <li>miRNA-100.txt: input file containing 100 miRNAs</li>
 </ul>
-Moreover, there are two miRNA-to-gene interaction files, namely microT_dataset.csv and miRanda_dataset.csv.</li>
-    <li>In order to reproduce all results repeat the execution of BUFET for:
+Moreover, there are two miRNA-to-gene interaction files, namely microT_dataset.csv and miRanda_dataset.csv.
+
+In order to reproduce all results repeat the execution of BUFET for:
     <ul>
     <li>All input files in folders exp1, exp2, ..., exp10 (miRNA-5.txt, miRNA-10.txt, miRNA-50.txt, miRNA-100.txt). Example: input/exp5/miRNA-100.txt or input/exp7/miRNA-5.txt</li>
     <li>microT and miRanda interactions (microT_dataset.csv, miRanda_dataset.csv)</li>
-    <li>10000,100000,1000000 random miRNA groups</li>
+    <li>10000, 100000, 1000000 random miRNA groups</li>
     <li>1 and 7 cores
     </ul>
 For example (miRanda interactions, experiment no 8, 10 miRNAs, 100000 random groups, 7 cores:
