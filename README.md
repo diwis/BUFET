@@ -8,7 +8,7 @@
 <br />&nbsp;&nbsp;3.1. <a href="#31-files-required">Files Required</a>
 <br />&nbsp;&nbsp;3.2. <a href="#32-script-execution">Script Execution</a>
 <br />&nbsp;&nbsp;3.3. <a href="#33-example-execution">Example Execution</a></li>
-<li><a href="#4-reproduction-of-the-papers-experiments">Reproduction of the paper's experiments</a></li>
+<li><a href="#4-reproduction-of-bufet-papers-experiments">Reproduction BUFET paper's experiments</a></li>
 <li><a href="#5-contact">Contact</a></li>
 </ol></p>
 
@@ -134,7 +134,7 @@ The script options are listed below:
     <li> The file "output.txt" contains the results of the analysis</li>
 </ol></p>
 
-<h2>4. Reproduction of the paper's experiments</h2>
+<h2>4. Reproduction of BUFET paper's experiments</h2>
 <p>
 <ol>
 <li><a href="https://github.com/diwis/BUFET/archive/master.zip">Download</a> the code and compile it according to the instructions (See section "Compiling the code").</li>
