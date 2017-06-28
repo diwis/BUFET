@@ -117,7 +117,7 @@ The script options are listed below:
     <li>"-output [filename]": path to output filename. Default filename: "output.txt"</li>
     <li>"-ontology [filename]": path to ontology data.</li>
     <li>"-iterations [value]": number of random miRNA groups to test against. Default value: "10000"</li>
-    <li>"-processors": integer value for the number of threads to be used in a parallel parallel. Default value: system cores-1.</li>
+    <li>"-processors [value]": integer value for the number of threads to be used in a parallel parallel. Default value: system cores-1.</li>
     <li>"-species [species_name]": specify either "human" or "mouse". Default species: "human"</li>
     <li>"--ensGO": must be added when using GO ontology data supplied by Ensembl</li>
     <li>"--miRanda": must be added when using prediction data from miRanda run.</li>
@@ -137,8 +137,8 @@ The script options are listed below:
     <li><a target="_blank" href="http://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz">Download</a> synonym data from NCBI.</li>
     <li>Place all files in the same folder as the .py and .bin files.</li>
     <li>From inside the folder containing all files execute the following command to run the example:
-	    <pre><code>python bufet.py -interactions interactions_example.csv -ontology ontology_example.csv -output output.txt -miRNA input_exampleXX.txt -synonyms All_Mammalia.gene_info</code></pre>
-    where XX is the number of miRNAs in the sample input file (5,10,25,50).</li>
+	    <pre><code>python bufet.py -interactions interactions_example.csv -ontology ontology_example.csv -output output.txt -miRNA XX -synonyms All_Mammalia.gene_info</code></pre>
+    where XX is the one of the sample input files (input_example5.txt, input_example10.txt, input_example25.txt, input_example50.txt).</li>
     <li> The file "output.txt" contains the results of the analysis</li>
 </ol></p>
 
@@ -180,7 +180,7 @@ In order to reproduce all results repeat the execution of BUFET for:
     <li>10000, 100000, 1000000 random miRNA groups</li>
     <li>1 and 7 cores
     </ul>
-For example (miRanda interactions, experiment no 8, 10 miRNAs, 100000 random groups, 7 cores:
+For example (miRanda interactions, experiment no 8, 10 miRNAs, 100000 random groups, 7 cores):
 <pre><code>python bufet.py -interactions miRanda_dataset.csv -ontology annotation_dataset.csv -output output.txt -miRNA input/exp8/miRNA-10.txt -synonyms All_Mammalia.gene_info -processors 7 -iterations 100000</code></pre>
 </li>
 </ol></p>
