@@ -5,10 +5,9 @@
 <li><a href="#1-introduction">Introduction</a></li>
 <li><a href="#2-compiling-bufet">Compiling BUFET</a></li>
 <li><a href="#3-executing-bufet">Executing BUFET</a>
-<p>3.1. <a href="#31-files-required">Files Required</a></p>
-<p>3.2. <a href="#32-script-execution">Script Execution</a></p>
-<p>3.3. <a href="#33-example-execution">Example Execution</a></p>
-</li>
+<br />&nbsp;&nbsp;3.1. <a href="#31-files-required">Files Required</a>
+<br />&nbsp;&nbsp;3.2. <a href="#32-script-execution">Script Execution</a>
+<br />&nbsp;&nbsp;3.3. <a href="#33-example-execution">Example Execution</a></li>
 <li><a href="#4-reproduction-of-the-papers-experiments">Reproduction of the paper's experiments</a></li>
 <li><a href="#5-contact">Contact</a></li>
 </ol></p>
