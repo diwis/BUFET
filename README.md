@@ -7,7 +7,7 @@
 <li><a href="#3-executing-bufet">Executing BUFET</a>
 <br />&nbsp;&nbsp;3.1. <a href="#31-files-required">Files Required</a>
 <br />&nbsp;&nbsp;3.2. <a href="#32-script-execution">Script Execution</a>
-<br />&nbsp;&nbsp;3.3. <a href="#33-example-execution">Example Execution</a></li>
+<br />&nbsp;&nbsp;3.3. <a href="#33-example">Example</a></li>
 <li><a href="#4-reproduction-of-bufet-papers-experiments">Reproduction BUFET paper's experiments</a></li>
 <li><a href="#5-contact">Contact</a></li>
 </ol></p>
@@ -44,14 +44,14 @@ This will compile the code and create a .bin file. <b>The .bin file must be in t
 <h3>3.1. Files required</h3>
 
 <p><ol>
-    <li>Input miRNA list, which is a text file containing only the names
+<li><b>Input miRNA file</b>, which is a text file containing only the names
 of differentially expressed miRNAs, each on a separate line. For
 example:<br />
         <pre><code>hsa-miR-132-5p
 hsa-miR-132-3p</code></pre>
     </li>
-    <li>Gene synonym data from NCBI, <a href='http://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz' target="_blank">http://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz</a>. Decompress the file with: <pre><code>gzip -d All_Mammalia.gene_info.gz</code></pre></li>
-    <li>A list of pathway annotation data retrieved by GO, KEGG, PANTHER, DisGeNet, etc. The data must be in the following CSV format:
+    <li><b>Gene synonym data file</b> from NCBI, <a href='http://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz' target="_blank">http://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz</a>. Decompress the file with: <pre><code>gzip -d All_Mammalia.gene_info.gz</code></pre></li>
+    <li><b>Gene annotation data file</b> retrieved by GO, KEGG, PANTHER, DisGeNet, etc. The file must contain the following CSV format for each line:
     <pre><code>gene_name|pathway_id|pathway_name</code></pre>
     *Alternatively, a list of Ensembl formatted annotations of genes to GO terms can be supplied. From <a href="http://www.ensembl.org/biomart" target="_blank">http://www.ensembl.org/biomart</a> select Ensembl Genes XX
     and species of interest. 
@@ -67,7 +67,7 @@ hsa-miR-132-3p</code></pre>
         </ul>
 	Note that in this case you will need to use the <b>"--ensGO"</b> option in order for the script to execute correctly! 
     </li>
-    <li>miRNA-gene interaction data in a file which has the following format for each line:
+    <li><b>miRNA-gene interactions file</b>, which has the following CSV format for each line:
         <pre><code>miRNA_name|gene_name</code></pre>
         *The user can also use the output from miRanda target prediction run. This requires:
         <ul>
@@ -103,11 +103,11 @@ By default the python script verifies that all input files exist, that they are 
 
 The script options are listed below:
 <ul>
-    <li>"-miRNA [filename]": path to the input miRNA file</li>
-    <li>"-interactions [filename]": path to miRNA-gene interactions file.</li>
-    <li>"-synonyms [filename]": path to the gene synonym file.</li>
+	<li>"-miRNA [filename]": path to the <b>input miRNA file</b>.</li>
+	<li>"-interactions [filename]": path to <b>miRNA-gene interactions file</b>.</li>
+	<li>"-synonyms [filename]": path to the <b>gene synonym data file</b>.</li>
+	<li>"-ontology [filename]": path to <b>gene annotation data file</b>.</li>
     <li>"-output [filename]": path to output filename. Created if it doesn't exist. Default filename: "output.txt"</li>
-    <li>"-ontology [filename]": path to ontology data (gene annotation) file.</li>
     <li>"-iterations [value]": number of random miRNA groups to test against. Default value: 10000</li>
     <li>"-processors [value]": the number of threads to be used for a parallel execution. Default value: system cores-1.</li>
     <li>"-species [species_name]": specify either "human" or "mouse". Default species: "human"</li>
@@ -123,14 +123,14 @@ The script options are listed below:
 </ul><br />
 </p>
 
-<h3>3.3. Example Execution</h3>
+<h3>3.3. Example</h3>
 <p><ol>
 <li><a href="https://github.com/diwis/BUFET/archive/master.zip">Download</a> the code and compile it according to the instructions (See section "Compiling BUFET").</li>
     <li><a target="_blank" href="http://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz">Download</a> synonym data from NCBI.</li>
     <li>Place all files in the same folder as the .py and .bin files.</li>
     <li>From inside the folder containing all files execute the following command to run the example:
 	    <pre><code>python bufet.py -interactions interactions_example.csv -ontology ontology_example.csv -output output.txt -miRNA XX -synonyms All_Mammalia.gene_info</code></pre>
-    where XX is the one of the sample input files (input_example5.txt, input_example10.txt, input_example25.txt, input_example50.txt).</li>
+    where XX is the one of the sample input miRNA files (input_example5.txt, input_example10.txt, input_example25.txt, input_example50.txt).</li>
     <li> The file "output.txt" contains the results of the analysis</li>
 </ol></p>
 
@@ -155,24 +155,14 @@ The script options are listed below:
 Running this command will execute BUFET for the 1st of the 10 experiments, with an input of 5 miRNAs, microT interactions, 1 processor and 10000 random miRNA groups. The file "output.txt" contains the results of the analysis.</li>
 
 <li>Reproduce the rest of the experiments:
-
-The input for each experiment (1-10) is located inside folders exp1, exp2, .., exp10 respectively, which are located inside the "input" folder. Each directory contains the following input files:
 <ul>
-<li>miRNA-5.txt: input file containing 5 miRNAs</li>
-<li>miRNA-10.txt: input file containing 10 miRNAs</li>
-<li>miRNA-50.txt: input file containing 50 miRNAs</li>
-<li>miRNA-100.txt: input file containing 100 miRNAs</li>
+	<li>Repeat the analysis for every input miRNA file in folders exp1, exp2, ..., exp10 (miRNA-5.txt, miRNA-10.txt, miRNA-50.txt, miRNA-100.txt) inside the "input" directory. <br />Examples: "input/exp7/miRNA-50.txt", "input/exp4/miRNA-100.txt"
+	<li>Repeat the analysis for both types of miRNA-gene interactions data files, namely microT_dataset.csv and miRanda_dataset.csv.
+	<li>Repeat the analysis for 10000, 100000 and 1000000 random miRNA groups.</li>
+	<li>Repeat the analysis in 1 and 7 cores.</li>
 </ul>
-Moreover, there are two miRNA-to-gene interaction files, namely microT_dataset.csv and miRanda_dataset.csv.
 
-In order to reproduce all results repeat the execution of BUFET for:
-    <ul>
-    <li>All input files in folders exp1, exp2, ..., exp10 (miRNA-5.txt, miRNA-10.txt, miRNA-50.txt, miRNA-100.txt). Example: input/exp5/miRNA-100.txt or input/exp7/miRNA-5.txt</li>
-    <li>microT and miRanda interactions (microT_dataset.csv, miRanda_dataset.csv)</li>
-    <li>10000, 100000, 1000000 random miRNA groups</li>
-    <li>1 and 7 cores
-    </ul>
-For example (miRanda interactions, experiment no 8, 10 miRNAs, 100000 random groups, 7 cores):
+<b>Example Analysis</b>: (miRanda interactions, experiment no 8, 10 miRNAs, 100000 random groups, 7 cores):
 <pre><code>python bufet.py -interactions miRanda_dataset.csv -ontology annotation_dataset.csv -output output.txt -miRNA input/exp8/miRNA-10.txt -synonyms All_Mammalia.gene_info -processors 7 -iterations 100000</code></pre>
 </li>
 </ol></p>
