@@ -111,16 +111,16 @@ By default the python script verifies that all input files exist, that they are 
 
 The script options are listed below:
 <ul>
-    <li>"-miRNA [filename]": the input miRNA list</li>
+    <li>"-miRNA [filename]": path to the input miRNA file</li>
     <li>"-interactions [filename]": path to miRNA-gene interactions file.</li>
-    <li>"-synonyms [filename]": path to gene synonyms file.</li>
-    <li>"-output [filename]": path to output filename. Default filename: "output.txt"</li>
-    <li>"-ontology [filename]": path to ontology data.</li>
-    <li>"-iterations [value]": number of random miRNA groups to test against. Default value: "10000"</li>
-    <li>"-processors [value]": integer value for the number of threads to be used in a parallel parallel. Default value: system cores-1.</li>
+    <li>"-synonyms [filename]": path to the gene synonym file.</li>
+    <li>"-output [filename]": path to output filename. Created if it doesn't exist. Default filename: "output.txt"</li>
+    <li>"-ontology [filename]": path to ontology data (gene annotation) file.</li>
+    <li>"-iterations [value]": number of random miRNA groups to test against. Default value: 10000</li>
+    <li>"-processors [value]": the number of threads to be used for a parallel execution. Default value: system cores-1.</li>
     <li>"-species [species_name]": specify either "human" or "mouse". Default species: "human"</li>
     <li>"--ensGO": must be added when using GO ontology data supplied by Ensembl</li>
-    <li>"--miRanda": must be added when using prediction data from miRanda run.</li>
+    <li>"--miRanda": must be added when using prediction data from a miRanda run.</li>
     <li>"-miScore [score]": miRanda score thresold if the miRanda mode is specified. Default score: "155"</li>
     <li>"-miFree [energy]": miRanda free energy threshold if the miRanda mode is specified. Default energy: "-20.0"</li>
     <li>"--disable-interactions-check": disables the validation for the interactions file (not recommended).</li>
