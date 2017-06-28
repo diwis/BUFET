@@ -5,11 +5,10 @@
 <li><a href="#1-introduction">Introduction</a></li>
 <li><a href="#2-compiling-bufet">Compiling BUFET</a></li>
 <li><a href="#3-executing-bufet">Executing BUFET</a>
-<ol>
-	<li><a href="#3i-files-required">Files Required</a></li>
-	<li><a href="#3ii-script-execution">Script Execution</a></li>
-	<li><a href="#3iii-example-execution">Example Execution</a></li>
-</ol></li>
+<br />&nbsp;&nbsp;&nbsp;&nbsp;3.1 <a href="#31-files-required">Files Required</a>
+<br />&nbsp;&nbsp;&nbsp;&nbsp;3.2. <a href="#32-script-execution">Script Execution</a>
+<br />&nbsp;&nbsp;&nbsp;&nbsp;3.3. <a href="#33-example-execution">Example Execution</a>
+</li>
 <li><a href="#4-reproduction-of-the-papers-experiments">Reproduction of the paper's experiments</a></li>
 <li><a href="#5-contact">Contact</a></li>
 
@@ -18,7 +17,7 @@
 </ol></p>
 
 <h2>1. Introduction</h2>
-<p>BUFET is a free software designed to speed up the unbiased miRNA enrichment analysis algorithm as described by Bleazard et al. in <a href="http://bioinformatics.oxfordjournals.org/content/31/10/1592" target="_blank">in their paper</a>.</p>
+<p>BUFET is an open-source software under the <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPL v.3 licence</a>, designed to speed up the unbiased miRNA enrichment analysis algorithm as described by Bleazard et al. in <a href="http://bioinformatics.oxfordjournals.org/content/31/10/1592" target="_blank">in their paper</a>.</p>
 <p>The BUFET algorithm generates an empirical distribution of genes targeted by miRNA and calculates p-values for related biological processes. Benjamini-Hochberg FDR correction produces a '*' or '**' for significance at 0.05 FDR and 0.01 FDR respectively.</p>
 
 <h2>2. Compiling BUFET</h2>
@@ -46,12 +45,9 @@ This will compile the code and create a .bin file. <b>The .bin file must be in t
 
 <h2>3. Executing BUFET</h2>
 
-<h3>3i. Files required</h3>
+<h3>3.1. Files required</h3>
 
-<p>This script requires files from several public datasets, which must
-be downloaded by the user. Files required in order to run the script are described below:
-
-<ol>
+<p><ol>
     <li>Input miRNA list, which is a text file containing only the names
 of differentially expressed miRNAs, each on a separate line. For
 example:<br />
@@ -102,7 +98,7 @@ hsa-miR-132-3p</code></pre>
    </ol>
 Note that all files listed above can contain header lines starting with the <b>"#"</b> character.</p>
 
-<h3>3ii. Script Execution</h3>
+<h3>3.2. Script Execution</h3>
 
 <p>Navigate inside the folder containing the .py and .bin files and run the following command:
 
@@ -131,7 +127,7 @@ The script options are listed below:
 </ul><br />
 </p>
 
-<h3>3iii. Example Execution</h3>
+<h3>3.3. Example Execution</h3>
 <p><ol>
 <li><a href="https://github.com/diwis/BUFET/archive/master.zip">Download</a> the code and compile it according to the instructions (See section "Compiling BUFET").</li>
     <li><a target="_blank" href="http://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/All_Mammalia.gene_info.gz">Download</a> synonym data from NCBI.</li>
