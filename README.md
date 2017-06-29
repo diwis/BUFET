@@ -152,19 +152,25 @@ The script options are listed below:
     <pre><code>tar xzf experiment_input.tar.gz</code></pre>
     <li>Assuming that your current folder contains the .py, .bin, and all input files, run an experiment as follows (or add the right paths for each file, accordingly):
 	    <pre><code>python bufet.py -interactions microT_dataset.csv -ontology annotation_dataset.csv -output output.txt -miRNA input/exp1/miRNA-5.txt -synonyms All_Mammalia.gene_info -processors 1 -iterations 10000</code></pre>
-Running this command will execute BUFET for the 1st of the 10 experiments, with an input of 5 miRNAs, microT interactions, 1 processor and 10000 random miRNA groups. The file "output.txt" contains the results of the analysis.</li>
+This will run a BUFET analysis for an input of 5 miRNAs using microT interactions (random miRNA groups used: 10000, cores used: 1).  The file "output.txt" contains the results of the analysis.</li>
 
-<li>Reproduce the rest of the experiments:
-<ul>
-	<li>Repeat the analysis for every input miRNA file in folders exp1, exp2, ..., exp10 (miRNA-5.txt, miRNA-10.txt, miRNA-50.txt, miRNA-100.txt) inside the "input" directory. <br />Examples: "input/exp7/miRNA-50.txt", "input/exp4/miRNA-100.txt"
-	<li>Repeat the analysis for both types of miRNA-gene interactions data files, namely microT_dataset.csv and miRanda_dataset.csv.
-	<li>Repeat the analysis for 10000, 100000 and 1000000 random miRNA groups.</li>
-	<li>Repeat the analysis in 1 and 7 cores.</li>
+<li>Reproduce the rest of the experiments. Repeat the analysis for:
+	<ul>
+		<li>every input miRNA file in folders exp1, exp2, ..., exp10 (miRNA-5.txt, miRNA-10.txt, miRNA-50.txt, miRNA-100.txt). Examples: "input/exp7/miRNA-50.txt", "input/exp4/miRNA-100.txt"</li>
+		<li>both types of miRNA-gene interactions data files: microT_dataset.csv and miRanda_dataset.csv.
+		<li>10000, 100000 and 1000000 random miRNA groups.</li>
+		<li>1 and 7 cores.</li>
 </ul>
 
-<b>Example Analysis</b>: (miRanda interactions, experiment no 8, 10 miRNAs, 100000 random groups, 7 cores):
-<pre><code>python bufet.py -interactions miRanda_dataset.csv -ontology annotation_dataset.csv -output output.txt -miRNA input/exp8/miRNA-10.txt -synonyms All_Mammalia.gene_info -processors 7 -iterations 100000</code></pre>
-</li>
+<b>Examples</b>: 
+<ul>
+	<li>(miRanda interactions, 10 miRNAs, 100000 random groups, 7 cores):
+<pre><code>python bufet.py -interactions miRanda_dataset.csv -ontology annotation_dataset.csv -output output.txt -miRNA input/exp8/miRNA-10.txt -synonyms All_Mammalia.gene_info -processors 7 -iterations 100000</code></pre></li>
+	<li>(microT interactions, 50 miRNAs, 1000000 random groups, 3 core):
+<pre><code>python bufet.py -interactions microT_dataset.csv -ontology annotation_dataset.csv -output output.txt -miRNA input/exp3/miRNA-5.txt -synonyms All_Mammalia.gene_info -processors 3 -iterations 1000000</code></pre></li>
+	<li>(miRanda interactions, 100 miRNAs, 10000 random groups, 1 core):
+<pre><code>python bufet.py -interactions miRanda_dataset.csv -ontology annotation_dataset.csv -output output.txt -miRNA input/exp2/miRNA-100.txt -synonyms All_Mammalia.gene_info -processors 1 -iterations 10000</code></pre></li>
+</ul>
 </ol></p>
 
 <h2>5. Contact</h2>
