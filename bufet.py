@@ -277,6 +277,10 @@ while i <len(commandLine):
 			exit(7)
 		options[commandLine[i]]=commandLine[i+1]
 		i+=2
+	else:
+		print ('\nError: unrecognized option: ' + commandLine[i] + '\nFor the list of options, run the script with -h or --help.')
+		i+=1
+		exit(7)
 
 if options['-help']=='yes':
 	printOptions()
