@@ -8,7 +8,7 @@
 <br />&nbsp;&nbsp;3.1. <a href="#31-files-required">Files Required</a>
 <br />&nbsp;&nbsp;3.2. <a href="#32-script-execution">Script Execution</a>
 <br />&nbsp;&nbsp;3.3. <a href="#33-example">Example</a></li>
-<li><a href="#4-reproduction-of-bufet-papers-experiments">Reproduction BUFET paper's experiments</a></li>
+<li><a href="#4-reproduction-of-the-bufet-papers-experiments">Reproduction of the BUFET paper's experiments</a></li>
 <li><a href="#5-contact">Contact</a></li>
 </ol></p>
 
@@ -99,7 +99,8 @@ Note that all files listed above can contain header lines starting with the <b>"
 <p>Navigate inside the folder containing the .py and .bin files and run the following command:
 
 <pre><code>python bufet.py [OPTIONS]</code></pre>
-By default the python script verifies that all input files exist, that they are not empty and that they have the correct format. Since the file check leads to increased execution times, it can be disabled by using the "--disable-file-check". However, we recommend that the file check remains enabled, since non-existing or empty files can crash the C++ core.
+<!--By default--> The python script verifies that all input files exist, that they are not empty and that they have the correct format.
+<!--Since the file check leads to increased execution times, it can be disabled by using the "--disable-file-check". However, we recommend that the file check remains enabled, since non-existing or empty files can crash the C++ core.-->
 
 The script options are listed below:
 <ul>
@@ -115,10 +116,10 @@ The script options are listed below:
     <li>"--miRanda": must be added when using prediction data from a miRanda run.</li>
     <li>"-miScore [score]": miRanda score thresold if the miRanda mode is specified. Default score: "155"</li>
     <li>"-miFree [energy]": miRanda free energy threshold if the miRanda mode is specified. Default energy: "-20.0"</li>
-    <li>"--disable-interactions-check": disables the validation for the interactions file (not recommended).</li>
+    <!--<li>"--disable-interactions-check": disables the validation for the interactions file (not recommended).</li>
     <li>"--disable-ontology-check": disables the validation for the ontology file (not recommended).</li>
     <li>"--disable-synonyms-check": disables the validation for the synonyms file (not recommended).</li>
-    <li>"--disable-file-check": disables the validation for all files (not recommended).</li>
+    <li>"--disable-file-check": disables the validation for all files (not recommended).</li>-->
     <li>'-h" or "--help": print help message and exit</li>
 </ul><br />
 </p>
@@ -134,7 +135,7 @@ The script options are listed below:
     <li> The file "output.txt" contains the results of the analysis</li>
 </ol></p>
 
-<h2>4. Reproduction of BUFET paper's experiments</h2>
+<h2>4. Reproduction of the BUFET paper's experiments</h2>
 <p>
 <ol>
 <li><a href="https://github.com/diwis/BUFET/archive/master.zip">Download</a> the code and compile it according to the instructions (See section "Compiling the code").</li>
