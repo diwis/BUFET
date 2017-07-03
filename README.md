@@ -108,9 +108,9 @@ The script options are listed below:
 	<li>"-interactions [filename]": path to <b>miRNA-gene interactions file</b>.</li>
 	<li>"-synonyms [filename]": path to the <b>gene synonym data file</b>.</li>
 	<li>"-ontology [filename]": path to <b>gene annotation data file</b>.</li>
-    <li>"-output [filename]": path to output filename. Created if it doesn't exist. Default filename: "output.txt"</li>
+    <li>"-output [filename]": path to output file. Created if it doesn't exist. Default filename: "output.txt"</li>
     <li>"-iterations [value]": number of random miRNA groups to test against. Default value: 10000</li>
-    <li>"-processors [value]": the number of threads to be used for a parallel execution. Default value: system cores-1.</li>
+    <li>"-processors [value]": the number of cores to be used in parallel. Default value: system cores-1.</li>
     <li>"-species [species_name]": specify either "human" or "mouse". Default species: "human"</li>
     <li>"--ensGO": must be added when using GO ontology data supplied by Ensembl</li>
     <li>"--miRanda": must be added when using prediction data from a miRanda run.</li>
