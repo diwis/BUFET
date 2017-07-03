@@ -147,7 +147,7 @@ The script options are listed below:
 	<li>miRNA input files</li>
 	<li>Synonym data from NCBI</li>
 	</ul>
-	All files listed above can be found in a compressed file <a href="http://carolina.imis.athena-innovation.gr/bufet/experiment_input.tar.gz">here</a>.
+	All files listed above can be found in a compressed file <a href="http://carolina.imis.athena-innovation.gr/bufet/experiment_input.zip">here</a>.
     </li>
     <li>Decompress the file:
     <pre><code>tar xzf experiment_input.tar.gz</code></pre>
