@@ -150,7 +150,7 @@ The script options are listed below:
 	All files listed above can be found in a compressed file <a href="http://carolina.imis.athena-innovation.gr/bufet/reproduction_files.zip">here</a>.
     </li>
     <li>Decompress the file:
-    <pre><code>unzip experiment_input.zip</code></pre>
+    <pre><code>unzip reproduction_files.zip</code></pre>
     <li>Assuming that your current folder contains the .py, .bin, and all input files, run an experiment as follows (or add the right paths for each file, accordingly):
 	    <pre><code>python bufet.py -interactions microT_dataset.csv -ontology annotation_dataset.csv -output output.txt -miRNA input/exp1/miRNA-5.txt -synonyms All_Mammalia.gene_info -processors 1 -iterations 10000</code></pre>
 This will run a BUFET analysis for an input of 5 miRNAs using microT interactions (random miRNA groups used: 10000, cores used: 1).  The file "output.txt" contains the results of the analysis.</li>
@@ -167,7 +167,7 @@ This will run a BUFET analysis for an input of 5 miRNAs using microT interaction
 <ul>
 	<li>(miRanda interactions, 10 miRNAs, 100000 random groups, 7 cores):
 <pre><code>python bufet.py -interactions miRanda_dataset.csv -ontology annotation_dataset.csv -output output.txt -miRNA input/exp8/miRNA-10.txt -synonyms All_Mammalia.gene_info -processors 7 -iterations 100000</code></pre></li>
-	<li>(microT interactions, 50 miRNAs, 1000000 random groups, 3 core):
+	<li>(microT interactions, 50 miRNAs, 1000000 random groups, 3 cores):
 <pre><code>python bufet.py -interactions microT_dataset.csv -ontology annotation_dataset.csv -output output.txt -miRNA input/exp3/miRNA-50.txt -synonyms All_Mammalia.gene_info -processors 3 -iterations 1000000</code></pre></li>
 	<li>(miRanda interactions, 100 miRNAs, 10000 random groups, 1 core):
 <pre><code>python bufet.py -interactions miRanda_dataset.csv -ontology annotation_dataset.csv -output output.txt -miRNA input/exp2/miRNA-100.txt -synonyms All_Mammalia.gene_info -processors 1 -iterations 10000</code></pre></li>
