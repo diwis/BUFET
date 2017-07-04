@@ -24,7 +24,7 @@
 </ul>
 <h4>Software:</h4>
 <ul>
-	<li>Linux or other unix-like environments (Mac OS)</li>
+	<li>Linux and MacOS</li>
     	<li>Python interpreter (>= version 2.7) that can run from the command line.</li>
     	<li>g++ 4.8 and above.</li>
 </ul></p>
