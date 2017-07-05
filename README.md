@@ -132,7 +132,7 @@ The script options are listed below:
     <li>Assuming that your current folder contains the .py and .bin files and all input files are located in the example folder, run an experiment as follows (or add the right paths for each file, accordingly):
 	    <pre><code>python bufet.py -interactions example/interactions_example.csv -ontology example/ontology_example.csv -output output.txt -miRNA XX -synonyms example/All_Mammalia.gene_info</code></pre>
     where XX is the one of the sample input miRNA files (example/input_example5.txt, example/input_example10.txt, example/input_example25.txt, input_example50.txt).</li>
-    <li> The file "output.txt" contains the results of the analysis</li>
+    <li> The file "output.txt" contains the results of the analysis.</li>
 </ol></p>
 
 <h2>4. Reproduction of the BUFET paper's experiments</h2>
