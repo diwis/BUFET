@@ -93,6 +93,8 @@ def checkInteractionsFile(interactions_file):
 		for line in f:
 			if line[0]=='#':
 				continue
+			if (line.strip()==""):
+				continue
 			linetmp=line.split('\t')
 			if len(linetmp)>1:
 				print('\nError: A wrong delimiter ("\\t") is used in the interactions file in line ' + str(i) +'. Perhaps you are using a wrong file type?')
@@ -111,6 +113,8 @@ def checkInteractionsFile(interactions_file):
 			i+=1
 	else:
 		for line in f:
+			if (line.strip()==""):
+				continue
 			if line[0]=='#':
 				continue
 			if line[0:2]!='>>':
@@ -142,6 +146,8 @@ def checkOntologyFile(ontology_file):
 	nameMissing=False
 	if altOnt=='1':
 		for line in f:
+			if (line.strip()==""):
+				continue
 			if line[0]=='#':
 				continue
 			linetmp=line.split('\t')
@@ -162,10 +168,10 @@ def checkOntologyFile(ontology_file):
 				nameMissing=True
 
 			i+=1
-		if nameMissing:
-			print('Warning: Some ontology terms are missing a name! Execution will continue normally...')
 	else:
 		for line in f:
+			if (line.strip()==""):
+				continue
 			if line[0]=='#':
 				continue
 			line=line.split('\t')
@@ -195,6 +201,8 @@ def checkSynonymsFile(synonyms_file):
 	f=open(synonyms_file)
 	i=1
 	for line in f:
+		if (line.strip()==""):
+				continue
 		if line[0]=='#':
 			continue
 		line=line.split('\t')
@@ -358,6 +366,7 @@ if options['-disable-file-check']=='no':
 		print('Warning: Synonyms file validation has been disabled.')
 else:
 	print('Warning: File validation is disabled.')
+
 #run script
 print('Starting BUFET')
 return_code=subprocess.call([executable,options['-interactions'],options['-output'],options['-miRNA'],options['-ontology'], options['-iterations'], options['-processors'],options['-synonyms'],options['-miFree'],options['-miScore'],available_species[options['-species']],altInt,altOnt])

@@ -384,6 +384,8 @@ void getInteractions(string filename)
 			token_list tokens,gtokens;
 
 			line=trim(line);
+			if (line=="")
+				continue;
 			if (line[0]=='#')
 				continue;
 			line=trim_chars_left(line,">");
@@ -468,6 +470,8 @@ void getInteractionsAlternative(string filename)
 			token_list tokens,gtokens;
 
 			line=trim(line);
+			if (line=="")
+				continue;
 			if (line[0]=='#')
 				continue;
 			
@@ -534,6 +538,8 @@ void getGOs(string filename)
 			index=0;
 			
 			line=trim(line);
+			if (line=="")
+				continue;
 			if (line[0]=='#')
 				continue;
 			
@@ -638,6 +644,8 @@ void getGOsAlternative(string filename)
 			index=0;
 			
 			line=trim(line);
+			if (line=="")
+				continue;
 			if (line[0]=='#')
 				continue;
 			
@@ -711,8 +719,11 @@ void getSynonyms(string filename,string taxid)
 		while(getline(inFile,line))
 		{
 			line=trim(line);
+			if (line=="")
+				continue;
 			if (line[0]=='#')
 				continue;
+			
 			index=line.find_first_of("\t");
 			taxonomy=line.substr(0,index);
 			if (taxonomy!=taxid)
@@ -1070,18 +1081,22 @@ void benjaminiHochberg()
  */
 string trim(string mystr)
 {
-	unsigned int start,stop;
+	int start,stop;
 
 	start=mystr.find_first_not_of("\n\t ");
 	stop=mystr.find_last_not_of("\n\t ");
 
-	return mystr.substr(start,stop-start+1);
+	if ((start==-1) || (stop==-1))
+		return "";
+	else
+		return mystr.substr(start,stop-start+1);
+	
 
 }
 
 string trim_chars_left(string mystr,string chars)
 {
-	unsigned int start;
+	int start;
 
 	start=mystr.find_first_not_of(chars);
 
