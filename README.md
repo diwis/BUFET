@@ -167,8 +167,8 @@ This will run a BUFET analysis for an input of 5 miRNAs using microT interaction
 <ul>
 	<li>(miRanda interactions, 10 miRNAs, 100000 random groups, 7 cores):
 <pre><code>python bufet.py -interactions miRanda_dataset.csv -ontology annotation_dataset.csv -output output.txt -miRNA input/exp8/miRNA-10.txt -synonyms All_Mammalia.gene_info -processors 7 -iterations 100000</code></pre></li>
-	<li>(microT interactions, 50 miRNAs, 1000000 random groups, 3 cores):
-<pre><code>python bufet.py -interactions microT_dataset.csv -ontology annotation_dataset.csv -output output.txt -miRNA input/exp3/miRNA-50.txt -synonyms All_Mammalia.gene_info -processors 3 -iterations 1000000</code></pre></li>
+	<li>(microT interactions, 50 miRNAs, 1000000 random groups, 7 cores):
+<pre><code>python bufet.py -interactions microT_dataset.csv -ontology annotation_dataset.csv -output output.txt -miRNA input/exp3/miRNA-50.txt -synonyms All_Mammalia.gene_info -processors 7 -iterations 1000000</code></pre></li>
 	<li>(miRanda interactions, 100 miRNAs, 10000 random groups, 1 core):
 <pre><code>python bufet.py -interactions miRanda_dataset.csv -ontology annotation_dataset.csv -output output.txt -miRNA input/exp2/miRNA-100.txt -synonyms All_Mammalia.gene_info -processors 1 -iterations 10000</code></pre></li>
 </ul>
