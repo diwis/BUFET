@@ -36,7 +36,7 @@
         <li>Run the following command:
             <pre><code>make</code></pre>
     </ol>
-This will compile the code and create a .bin file. <b>The .bin file must be in the same folder as the .py at all times for the program to run</b>
+This will compile the code and create a .bin file. <b>The .bin file must be in the same folder as the .py file at all times, in order for the program to execute correctly.</b>
 </p>
 
 <h2>3. Executing BUFET</h2>
