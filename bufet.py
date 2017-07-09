@@ -95,7 +95,7 @@ def checkInteractionsFile(interactions_file):
 				continue
 			if (line.strip()==""):
 				continue
-			linetmp=line.split('\t')
+			linetmp=line.strip().split('\t')
 			if len(linetmp)>1:
 				print('\nError: A wrong delimiter ("\\t") is used in the interactions file in line ' + str(i) +'. Perhaps you are using a wrong file type?')
 				exit(2)
@@ -150,7 +150,7 @@ def checkOntologyFile(ontology_file):
 				continue
 			if line[0]=='#':
 				continue
-			linetmp=line.split('\t')
+			linetmp=line.strip().split('\t')
 			if len(linetmp)>1:
 				print('\nError: The wrong delimiter ("\\t") is used in the ontology file in line ' + str(i) +'. Perhaps you are using a wrong file type?')
 				exit(2)
