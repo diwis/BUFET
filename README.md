@@ -138,7 +138,7 @@ The script options are listed below:
 <h2>4. Reproduction of the BUFET paper's experiments</h2>
 <p>
 <ol>
-<li><a href="https://github.com/diwis/BUFET/archive/master.zip">Download</a> the code and compile it according to the instructions (See section "<a href="https://github.com/diwis/BUFET#2-compiling-bufet">Compiling the code</a>").</li>
+<li><a href="https://github.com/diwis/BUFET/archive/master.zip">Download</a> the code and compile it according to the instructions (See section "<a href="#2-compiling-bufet">Compiling the code</a>").</li>
     <li>Files required for the reproduction of the experiments:
     	<ul>
 	<li>GO gene annotations for Ensembl v.69</li>
