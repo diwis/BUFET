@@ -150,8 +150,9 @@ The script options are listed below:
 	All files listed above can be found in a compressed file <a href="http://carolina.imis.athena-innovation.gr/bufet/reproduction_files.zip">here</a>.
     </li>
     <li>Decompress the file:
-    <pre><code>unzip reproduction_files.zip</code></pre>
-    <li>Assuming that your current folder contains the .py, .bin, and all input files, run an experiment as follows (or add the right paths for each file, accordingly):
+		<pre><code>unzip reproduction_files.zip</code></pre></li>
+	<li>Copy all files and folders from the "reproduction_files/" directory, to the folder containing the .py and .bin files.</li>
+    <li>Assuming that your current folder contains the .py, .bin, and all input files, run an experiment as follows (if not, modify the paths for each file, accordingly):
 	    <pre><code>python bufet.py -interactions microT_dataset.csv -ontology annotation_dataset.csv -output output.txt -miRNA input/exp1/miRNA-5.txt -synonyms All_Mammalia.gene_info -processors 1 -iterations 10000</code></pre>
 This will run a BUFET analysis for an input of 5 miRNAs using microT interactions (random miRNA groups used: 10000, cores used: 1).  The file "output.txt" contains the results of the analysis.</li>
 
