@@ -8,6 +8,7 @@
 <br />&nbsp;&nbsp;3.1. <a href="#31-files-required">Files Required</a>
 <br />&nbsp;&nbsp;3.2. <a href="#32-script-execution">Script Execution</a>
 <br />&nbsp;&nbsp;3.3. <a href="#33-example">Example</a></li>
+<br />&nbsp;&nbsp;3.4. <a href="#33-example">Adding more species</a></li>
 <li><a href="#4-reproduction-of-the-bufet-papers-experiments">Reproduction of the BUFET paper's experiments</a></li>
 <li><a href="#5-contact">Contact</a></li>
 </ol></p>
@@ -99,8 +100,8 @@ Note that all files listed above can contain header lines starting with the <b>"
 <p>Navigate inside the folder containing the .py and .bin files and run the following command:
 
 <pre><code>python bufet.py [OPTIONS]</code></pre>
-<!--By default--> The python script verifies that all input files exist, that they are not empty and that they have the correct format.
-<!--Since the file check leads to increased execution times, it can be disabled by using the "--disable-file-check". However, we recommend that the file check remains enabled, since non-existing or empty files can crash the C++ core.-->
+By default, the python script verifies that all input files exist, that they are not empty and that they have the correct format.
+Since the file check leads to increased execution times, it can be disabled by using the "--disable-file-check". However, we recommend that the file check remains enabled, since non-existing or empty files can crash the C++ core.
 
 The script options are listed below:
 <ul>
@@ -111,15 +112,15 @@ The script options are listed below:
     <li>"-output [filename]": path to output file. Created if it doesn't exist. Default filename: "output.txt"</li>
     <li>"-iterations [value]": number of random miRNA groups to test against. Default value: 10000</li>
     <li>"-processors [value]": the number of cores to be used in parallel. Default value: system cores-1.</li>
-    <li>"-species [species_name]": specify either "human" or "mouse". Default species: "human"</li>
+    <li>"-species [species_name]": specify either "human" or "mouse". Default species: "human". Further species can be added by following the instructions in section 3.4.</li>
     <li>"--ensGO": must be added when using GO ontology data supplied by Ensembl</li>
     <li>"--miRanda": must be added when using prediction data from a miRanda run.</li>
     <li>"-miScore [score]": miRanda score thresold if the miRanda mode is specified. Default score: "155"</li>
     <li>"-miFree [energy]": miRanda free energy threshold if the miRanda mode is specified. Default energy: "-20.0"</li>
-    <!--<li>"--disable-interactions-check": disables the validation for the interactions file (not recommended).</li>
+    <li>"--disable-interactions-check": disables the validation for the interactions file (not recommended).</li>
     <li>"--disable-ontology-check": disables the validation for the ontology file (not recommended).</li>
     <li>"--disable-synonyms-check": disables the validation for the synonyms file (not recommended).</li>
-    <li>"--disable-file-check": disables the validation for all files (not recommended).</li>-->
+    <li>"--disable-file-check": disables the validation for all files (not recommended).</li>
     <li>'-h" or "--help": print help message and exit</li>
 </ul><br />
 </p>
@@ -134,6 +135,9 @@ The script options are listed below:
     where XX is the one of the sample input miRNA files (example/input_example5.txt, example/input_example10.txt, example/input_example25.txt, input_example50.txt).</li>
     <li> The file "output.txt" contains the results of the analysis.</li>
 </ol></p>
+
+<h3>3.4. Adding more species</h3>
+Open bufet.py and in line 239 add the label you want to use for the species and the taxonomy ID inside the dictionary, enclosed by single or double quotes (', "). The script can now be run using the new label as an argument to the "-species" option.
 
 <h2>4. Reproduction of the BUFET paper's experiments</h2>
 <p>
