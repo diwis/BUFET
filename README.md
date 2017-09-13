@@ -7,8 +7,8 @@
 <li><a href="#3-executing-bufet">Executing BUFET</a>
 <br />&nbsp;&nbsp;3.1. <a href="#31-files-required">Files Required</a>
 <br />&nbsp;&nbsp;3.2. <a href="#32-script-execution">Script Execution</a>
-<br />&nbsp;&nbsp;3.3. <a href="#33-example">Example</a></li>
-<br />&nbsp;&nbsp;3.4. <a href="#33-example">Adding more species</a></li>
+<br />&nbsp;&nbsp;3.4. <a href="#33-example">Example</a>
+<br />&nbsp;&nbsp;3.3. <a href="#34-adding-more-species">Adding more species</a></li>
 <li><a href="#4-reproduction-of-the-bufet-papers-experiments">Reproduction of the BUFET paper's experiments</a></li>
 <li><a href="#5-contact">Contact</a></li>
 </ol></p>
