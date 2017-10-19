@@ -23,8 +23,8 @@
 <p>The publication for BUFET can be found here: <a target= "_blank" href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-017-1812-8">https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-017-1812-8</a></p>
 
 <h3>1.2 Citation</h3>
-Please cite:
-<i>Konstantinos Zagganas, Thanasis Vergoulis, Ioannis S. Vlachos, Maria D. Paraskevopoulou, Spiros Skiadopoulos and Theodore Dalamagas.  BUFET: boosting the unbiased miRNA functional enrichment analysis using bitsets. BMC Bioinformatics volume 18, page 399, doi 10.1186/s12859-017-1812-8, 2017.</i>
+<p>Please cite:<br />
+<i>Konstantinos Zagganas, Thanasis Vergoulis, Ioannis S. Vlachos, Maria D. Paraskevopoulou, Spiros Skiadopoulos and Theodore Dalamagas.  BUFET: boosting the unbiased miRNA functional enrichment analysis using bitsets. BMC Bioinformatics volume 18, page 399, doi 10.1186/s12859-017-1812-8, 2017.</i></p>
 
 <h2>2. Compiling BUFET</h2>
 <p>In order for the program to run, the system must comply with the following specifications:
