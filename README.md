@@ -16,6 +16,7 @@
 <h2>1. Introduction</h2>
 <p>BUFET is an open-source software under the <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPL v.3 licence</a>, designed to speed up the unbiased miRNA enrichment analysis algorithm as described by Bleazard et al. in <a href="http://bioinformatics.oxfordjournals.org/content/31/10/1592" target="_blank">in their paper</a>.</p>
 <p>The BUFET algorithm generates an empirical distribution of genes targeted by miRNA and calculates p-values for related biological processes. Benjamini-Hochberg FDR correction produces a '*' or '**' for significance at 0.05 FDR and 0.01 FDR respectively.</p>
+<p>The publication for BUFET can be found here: <a target= "_blank" href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-017-1812-8">https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-017-1812-8</a></p>
 
 <h2>2. Compiling BUFET</h2>
 <p>In order for the program to run, the system must comply with the following specifications:
