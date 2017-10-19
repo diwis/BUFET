@@ -3,8 +3,8 @@
 <p>
 <ol>
 <li><a href="#1-introduction">Introduction</a>
-	<br />&nbsp;&nbsp;1.1. Publication
-	<br />&nbsp;&nbsp;1.2. Citation</li>
+	<br />&nbsp;&nbsp;1.1. <a href="#11-publication">Publication</a>
+	<br />&nbsp;&nbsp;1.2. <a href="#12-citation">Citation</a></li>
 <li><a href="#2-compiling-bufet">Compiling BUFET</a></li>
 <li><a href="#3-executing-bufet">Executing BUFET</a>
 <br />&nbsp;&nbsp;3.1. <a href="#31-files-required">Files Required</a>
