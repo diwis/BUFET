@@ -2,7 +2,9 @@
 <h2>Table of contents</h2>
 <p>
 <ol>
-<li><a href="#1-introduction">Introduction</a></li>
+<li><a href="#1-introduction">Introduction</a>
+	<br />&nbsp;&nbsp;1.1. Publication
+	<br />&nbsp;&nbsp;1.2. Citation</li>
 <li><a href="#2-compiling-bufet">Compiling BUFET</a></li>
 <li><a href="#3-executing-bufet">Executing BUFET</a>
 <br />&nbsp;&nbsp;3.1. <a href="#31-files-required">Files Required</a>
@@ -16,7 +18,13 @@
 <h2>1. Introduction</h2>
 <p>BUFET is an open-source software under the <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPL v.3 licence</a>, designed to speed up the unbiased miRNA enrichment analysis algorithm as described by Bleazard et al. in <a href="http://bioinformatics.oxfordjournals.org/content/31/10/1592" target="_blank">in their paper</a>.</p>
 <p>The BUFET algorithm generates an empirical distribution of genes targeted by miRNA and calculates p-values for related biological processes. Benjamini-Hochberg FDR correction produces a '*' or '**' for significance at 0.05 FDR and 0.01 FDR respectively.</p>
+
+<h3>1.1 Publication</h3>
 <p>The publication for BUFET can be found here: <a target= "_blank" href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-017-1812-8">https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-017-1812-8</a></p>
+
+<h3>1.2 Citation</h3>
+Please cite:
+<i>Konstantinos Zagganas, Thanasis Vergoulis, Ioannis S. Vlachos, Maria D. Paraskevopoulou, Spiros Skiadopoulos and Theodore Dalamagas.  BUFET: boosting the unbiased miRNA functional enrichment analysis using bitsets. BMC Bioinformatics volume 18, page 399, doi 10.1186/s12859-017-1812-8, 2017.</i>
 
 <h2>2. Compiling BUFET</h2>
 <p>In order for the program to run, the system must comply with the following specifications:
