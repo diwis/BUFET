@@ -189,4 +189,4 @@ This will run a BUFET analysis for an input of 5 miRNAs using microT interaction
 </ol></p>
 
 <h2>5. Contact</h2>
-<p>For any problems with the execution of this code please contact us at zagganas@imis.athena-innovation.gr</p>
+<p>For any problems with the execution of this code please contact us at zagganas@athenarc.gr</p>
