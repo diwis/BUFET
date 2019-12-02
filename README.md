@@ -194,4 +194,4 @@ This work was funded by the European Commission under the Research Infrastructur
 <img src="https://cdn.evbuc.com/eventlogos/56278121/logoexcelerateeuflagacknowledgement.png" width="100%">
 
 <h2>6. Contact</h2>
-<p>For any problems with the execution of this code please contact us at <a href="mailto:zagganas@athenarc.gr>zagganas@athenarc.gr</a></p>
+<p>For any problems with the execution of this code please contact us at zagganas@athenarc.gr</p>
