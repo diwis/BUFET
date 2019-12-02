@@ -12,7 +12,8 @@
 <br />&nbsp;&nbsp;3.4. <a href="#33-example">Example</a>
 <br />&nbsp;&nbsp;3.3. <a href="#34-adding-more-species">Adding more species</a></li>
 <li><a href="#4-reproduction-of-the-bufet-papers-experiments">Reproduction of the BUFET paper's experiments</a></li>
-<li><a href="#5-contact">Contact</a></li>
+<li><a href="#5-funding">Funding</a></li>
+<li><a href="#6-contact">Contact</a></li>
 </ol></p>
 
 <h2>1. Introduction</h2>
@@ -188,5 +189,9 @@ This will run a BUFET analysis for an input of 5 miRNAs using microT interaction
 </ul>
 </ol></p>
 
-<h2>5. Contact</h2>
+<h2>5. Funding</h2>
+This work was funded by the European Commission under the Research Infrastructure (H2020) programme (project: ELIXIR-EXCELERATE, grant: GA676559).
+<img src="https://cdn.evbuc.com/eventlogos/56278121/logoexcelerateeuflagacknowledgement.png" width="100%">
+
+<h2>6. Contact</h2>
 <p>For any problems with the execution of this code please contact us at zagganas@athenarc.gr</p>
