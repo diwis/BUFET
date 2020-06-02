@@ -151,7 +151,7 @@ The script options are listed below:
 Open bufet.py and in line 240 add the label you want to use for the species and the taxonomy ID inside the dictionary, enclosed by single or double quotes (', "). The script can now be run using the new label as an argument to the "-species" option.
 
 <h3>3.5 Print target genes involved in each annotation class (NEW!)</h3>
-Use the argument ```--print-involved-genes``` to print the common genes between each annotation class (GO category) and each miRNA in the sample under examination in a file. You can also use the ```-involved-genes-filename < filename > argument to specify an output file name other than the default (involved-genes.txt). More specifically, the structure of the output is:
+Use the argument <pre><code>--print-involved-genes</code></pre> to print the common genes between each annotation class (GO category) and each miRNA in the sample under examination in a file. You can also use the <pre><code>-involved-genes-filename < filename ></code></pre> argument to specify an output file name other than the default (involved-genes.txt). More specifically, the structure of the output is:
 
 ```
 >OntologyClass1
