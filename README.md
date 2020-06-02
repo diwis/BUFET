@@ -147,7 +147,27 @@ The script options are listed below:
 </ol></p>
 
 <h3>3.4. Adding more species</h3>
-Open bufet.py and in line 239 add the label you want to use for the species and the taxonomy ID inside the dictionary, enclosed by single or double quotes (', "). The script can now be run using the new label as an argument to the "-species" option.
+Open bufet.py and in line 240 add the label you want to use for the species and the taxonomy ID inside the dictionary, enclosed by single or double quotes (', "). The script can now be run using the new label as an argument to the "-species" option.
+
+<h3>3.5 Print target genes involved in each annotation class <i>New Feature!</i></h3>
+Use the argument ```--print-involved-genes``` to print the common genes between each annotation class (GO category) and each miRNA in the sample under examination in a file. You can also use the ```-involved-genes-filename < filename > argument to specify an output file name other than the default (involved-genes.txt). More specifically, the structure of the output is:
+
+```
+>OntologyClass1
+miRNA1     Gene1,Gene2,Gene3
+miRNA2     
+miRNAn     Gene5,Gene6,Gene1
+```
+
+An example of the output be seen bellow:
+```
+>GO:0034199
+hsa-miR-6834-3p 
+hsa-miR-3142    
+hsa-miR-4306    ADCY4,PRKAR2A,ADCY2
+hsa-miR-3613-3p PRKAR2A,PRKAR2B,ADCY8,PRKAR1A
+hsa-miR-30d-3p  
+```
 
 <h2>4. Reproduction of the BUFET paper's experiments</h2>
 <p>
