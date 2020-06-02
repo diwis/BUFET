@@ -9,8 +9,9 @@
 <li><a href="#3-executing-bufet">Executing BUFET</a>
 <br />&nbsp;&nbsp;3.1. <a href="#31-files-required">Files Required</a>
 <br />&nbsp;&nbsp;3.2. <a href="#32-script-execution">Script Execution</a>
-<br />&nbsp;&nbsp;3.4. <a href="#33-example">Example</a>
-<br />&nbsp;&nbsp;3.3. <a href="#34-adding-more-species">Adding more species</a></li>
+<br />&nbsp;&nbsp;3.3. <a href="#33-example">Example</a>
+<br />&nbsp;&nbsp;3.4. <a href="#34-adding-more-species">Adding more species</a>
+<br />&nbsp;&nbsp;3.5. <a href="#35-print-target-genes-involved-in-each-annotation-class-new">Print target genes involved in each annotation class (NEW!)</a></li>
 <li><a href="#4-reproduction-of-the-bufet-papers-experiments">Reproduction of the BUFET paper's experiments</a></li>
 <li><a href="#5-funding">Funding</a></li>
 <li><a href="#6-contact">Contact</a></li>
@@ -149,7 +150,7 @@ The script options are listed below:
 <h3>3.4. Adding more species</h3>
 Open bufet.py and in line 240 add the label you want to use for the species and the taxonomy ID inside the dictionary, enclosed by single or double quotes (', "). The script can now be run using the new label as an argument to the "-species" option.
 
-<h3>3.5 Print target genes involved in each annotation class <i>New Feature!</i></h3>
+<h3>3.5 Print target genes involved in each annotation class (NEW!)</h3>
 Use the argument ```--print-involved-genes``` to print the common genes between each annotation class (GO category) and each miRNA in the sample under examination in a file. You can also use the ```-involved-genes-filename < filename > argument to specify an output file name other than the default (involved-genes.txt). More specifically, the structure of the output is:
 
 ```
