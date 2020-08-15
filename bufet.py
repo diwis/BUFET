@@ -259,6 +259,7 @@ options['-disable-synonyms-check']='no'
 options['-disable-ontology-check']='no'
 options['-print-involved-genes']='no'
 options['-involved-genes-filename']='involved-genes.txt'
+options['-no-synonyms']='no'
 
 #Read command line arguments
 i=1
@@ -306,6 +307,10 @@ if options['-ensGO']=='no':
     altOnt='1'
 else:
     altOnt='0'
+if options['-no-synonyms']=='no':
+    disableSynonyms='0'
+else:
+    disableSynonyms='1'
 
 #Find script path, which must be the same as the executable
 script_path=os.path.dirname(os.path.realpath(__file__))
@@ -325,13 +330,13 @@ if options['-interactions']=='':
 if options['-ontology']=='':
     print('\nError: No ontology file specified!')
     exit(1)
-if options['-synonyms']=='':
+if (options['-synonyms']=='') and (disableSynonyms=='0'):
     print('\nError: No synonyms file specified!')
     exit(1)
 
 
 options['-species']=options['-species'].strip('"')
-if options['-species'] not in available_species:
+if (options['-species'] not in available_species) and (disableSynonyms=='0'):
     print('\nError: Unrecognized species. Available options: \n"human"\n"mouse"')
     exit(10)
 
@@ -363,16 +368,19 @@ if options['-disable-file-check']=='no':
         checkOntologyFile(os.path.abspath(options['-ontology']))
     else:
         print('Warning: Ontology file validation has been disabled.')
-    if options['-disable-synonyms-check']=='no':
-        checkSynonymsFile(os.path.abspath(options['-synonyms']))
+    if disableSynonyms=='0':
+        if options['-disable-synonyms-check']=='no':
+            checkSynonymsFile(os.path.abspath(options['-synonyms']))
+        else:
+            print('Warning: Synonyms file validation has been disabled.')
     else:
-        print('Warning: Synonyms file validation has been disabled.')
+        print('Synonyms functionality is disabled.')
 else:
     print('Warning: File validation is disabled.')
 
 #run script
-print('Starting BUFET')
-return_code=subprocess.call([executable,options['-interactions'],options['-output'],options['-miRNA'],options['-ontology'], options['-iterations'], options['-processors'],options['-synonyms'],options['-miFree'],options['-miScore'],available_species[options['-species']],altInt,altOnt])
+print('Starting BUFET\n................\n')
+return_code=subprocess.call([executable,options['-interactions'],options['-output'],options['-miRNA'],options['-ontology'], options['-iterations'], options['-processors'],options['-synonyms'],options['-miFree'],options['-miScore'],available_species[options['-species']],altInt,altOnt,disableSynonyms])
 
 
 if (options['-print-involved-genes']!='no') and (altInt=='1') and (altOnt=='1'):

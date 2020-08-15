@@ -12,6 +12,7 @@
 <br />&nbsp;&nbsp;3.3. <a href="#33-example">Example</a>
 <br />&nbsp;&nbsp;3.4. <a href="#34-adding-more-species">Adding more species</a>
 <br />&nbsp;&nbsp;3.5. <a href="#35-print-target-genes-involved-in-each-annotation-class-new">Print target genes involved in each annotation class (NEW!)</a></li>
+<br />&nbsp;&nbsp;3.6. <a href="#36-disable-gene-synonym-matching-new">Disable synonym matching (NEW!)</a></li>
 <li><a href="#4-reproduction-of-the-bufet-papers-experiments">Reproduction of the BUFET paper's experiments</a></li>
 <li><a href="#5-funding">Funding</a></li>
 <li><a href="#6-contact">Contact</a></li>
@@ -132,6 +133,7 @@ The script options are listed below:
     <li>"--disable-ontology-check": disables the validation for the ontology file (not recommended).</li>
     <li>"--disable-synonyms-check": disables the validation for the synonyms file (not recommended).</li>
     <li>"--disable-file-check": disables the validation for all files (not recommended).</li>
+    <li>"--no-synonyms: disables use of synonyms (synonyms file not required by the script)"
     <li>'-h" or "--help": print help message and exit</li>
 </ul><br />
 </p>
@@ -169,6 +171,8 @@ hsa-miR-4306    ADCY4,PRKAR2A,ADCY2
 hsa-miR-3613-3p PRKAR2A,PRKAR2B,ADCY8,PRKAR1A
 hsa-miR-30d-3p  
 ```
+<h3>3.6 Disable gene synonym matching (NEW!)</h3>
+Use the argument <pre><code>--no-synonyms</code></pre> to disable matching for gene synonyms. In this case a synonyms file is not required and if one is provided, it will be ignored.
 
 <h2>4. Reproduction of the BUFET paper's experiments</h2>
 <p>

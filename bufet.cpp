@@ -192,8 +192,16 @@ int main(int argc, char* argv[])
 	{
 		getGOs(argv[4]);
 	}
-	cout << "Reading synonym data" << endl;
-	getSynonyms(argv[7],argv[10]);
+	if (stoi(argv[13])==0)
+	{
+		cout << "Reading synonym data" << endl;
+		getSynonyms(argv[7],argv[10]);
+	}
+	else
+	{
+		cout << "Synonyms disabled" << endl;
+	}
+	
 	cout << "Reading interaction data" << endl;
 	if (stoi(argv[11])==1)
 	{
@@ -205,7 +213,10 @@ int main(int argc, char* argv[])
 		getInteractions(argv[1]);
 	}
 	
-	cout << "Synonym matching" << endl;
+	if (stoi(argv[13])==0)
+	{
+		cout << "Synonym matching for interactions" << endl;
+	}
 	fixInteractions();
 	cout<< "Calculating query GO overlap" << endl;
 	getMirnas(argv[3]);
