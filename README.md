@@ -11,7 +11,7 @@
 <br />&nbsp;&nbsp;3.2. <a href="#32-script-execution">Script Execution</a>
 <br />&nbsp;&nbsp;3.3. <a href="#33-example">Example</a>
 <br />&nbsp;&nbsp;3.4. <a href="#34-adding-more-species">Adding more species</a>
-<br />&nbsp;&nbsp;3.5. <a href="#35-print-target-genes-involved-in-each-annotation-class-new">Print target genes involved in each annotation class (NEW!)</a></li>
+<br />&nbsp;&nbsp;3.5. <a href="#35-print-target-genes-involved-in-each-annotation-class-new">Print target genes involved in each annotation class (NEW!)</a>
 <br />&nbsp;&nbsp;3.6. <a href="#36-disable-gene-synonym-matching-new">Disable synonym matching (NEW!)</a></li>
 <li><a href="#4-reproduction-of-the-bufet-papers-experiments">Reproduction of the BUFET paper's experiments</a></li>
 <li><a href="#5-funding">Funding</a></li>
